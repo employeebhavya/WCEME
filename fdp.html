@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WCEME - 2025</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/prettyphoto/css/prettyPhoto.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/countdown/jquery.countdown.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <style>
+      /* Hero Section */
+      .hero-section {
+        text-align: center;
+        margin-bottom: 4rem;
+        background: white;
+        padding: 3rem 2rem;
+        border-radius: 20px;
+      }
+
+      .program-badge {
+        display: inline-block;
+        background: #f67330;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: #333;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        margin-top: 0;
+      }
+
+      .hero-title .highlight {
+        color: #f67330;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        color: #666;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.4;
+      }
+
+      /* Profile Section */
+      .profile-section {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        margin-bottom: 3rem;
+        border-top: 4px solid #f67330;
+      }
+
+      .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+      .profile-header .session-card {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-left: 4px solid #f67330;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-bottom: 1.5rem;
+      }
+      .profile-header .session-card button {
+        margin-top: 0;
+      }
+
+      .profile-image {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: #f67330;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        border: 4px solid white;
+      }
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profile-image:hover {
+        transform: scale(1.05);
+      }
+
+      .profile-image i {
+        font-size: 4rem;
+        color: white;
+      }
+
+      .doctor-name {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.8rem;
+      }
+
+      .credentials-wrapper {
+        background: #f8f9fa;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #f67330;
+      }
+
+      .credentials {
+        font-size: 14px;
+        color: #f67330;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .titles {
+        font-size: 16px;
+        color: #666;
+        font-weight: 500;
+        line-height: 1.5;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+
+      .bio-content {
+        color: #555;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .bio-content p {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Program Schedule */
+      .schedule-section {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        border-top: 4px solid #f67330;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      .schedule-section .section-header h3 {
+        margin-bottom: 0;
+      }
+
+      .section-icon {
+        width: 50px;
+        height: 50px;
+        background: #f67330;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .program-meta-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        border: 1px solid #e0e0e0;
+        border-left: 4px solid #f67330;
+      }
+      .meta-grid-parent {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .meta-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+      }
+
+      .meta-icon {
+        width: 40px;
+        height: 40px;
+        background: #f67330;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+      }
+
+      .meta-text {
+        color: #555;
+        font-weight: 500;
+      }
+
+      /* Timeline Grid */
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .session-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid #cacaca;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      .session-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(246, 115, 48, 0.05);
+        transition: width 0.3s ease;
+      }
+
+      .session-card:hover {
+        transform: translateY(-5px);
+
+        border-color: #f67330;
+      }
+
+      .session-card:hover::before {
+        width: 100%;
+      }
+
+      .session-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .session-time {
+        background: #f67330;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .session-number {
+        width: 32px;
+        height: 32px;
+        background: #333;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .session-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+        position: relative;
+        z-index: 2;
+      }
+      .bio-content p {
+        font-size: 16px;
+      }
+
+      .session-preview {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.5;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 0;
+      }
+
+      .break-card {
+        background: #333;
+        color: white;
+      }
+
+      .break-card .session-time {
+        background: #f67330;
+      }
+
+      .break-card .session-title,
+      .break-card .session-preview {
+        color: white;
+      }
+
+      .break-card .session-number {
+        background: #f67330;
+        color: white;
+      }
+
+      /* Detail Panel */
+      .detail-panel {
+        position: fixed;
+        right: -600px;
+        top: 0;
+        width: 600px;
+        height: 100vh;
+        background: white;
+        z-index: 1000;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+      }
+
+      .detail-panel.open {
+        right: 0;
+      }
+
+      .detail-header {
+        background: #f67330;
+        color: white;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.2);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+
+      .close-btn:hover {
+        background: rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+      }
+
+      .detail-time {
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+        font-weight: bold;
+      }
+
+      .detail-title {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .detail-content {
+        padding: 2rem;
+      }
+
+      .detail-description {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-size: 16px;
+      }
+
+      .objectives-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 1.5rem;
+        border-left: 4px solid #f67330;
+      }
+
+      .objectives-title {
+        color: #f67330;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 16px;
+      }
+
+      .objectives-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .objectives-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .objectives-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 8px;
+        height: 8px;
+        background: #f67330;
+        border-radius: 50%;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .read-more-btn {
+        background: none;
+        border: none;
+        color: #f67330;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 16px;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .detail-panel {
+          width: 500px;
+          right: -500px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section,
+        .profile-section,
+        .schedule-section {
+          padding: 2rem 1.5rem;
+          border-radius: 15px;
+        }
+
+        .profile-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        .profile-image i {
+          font-size: 3rem;
+        }
+
+        .timeline-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .session-card {
+          padding: 1.5rem;
+        }
+
+        .meta-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-panel {
+          width: 100%;
+          right: -100%;
+        }
+
+        .detail-panel.open {
+          right: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section {
+          padding: 2rem 1rem;
+        }
+
+        .profile-section,
+        .schedule-section {
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      /* Smooth Entrance Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger-1 {
+        transition-delay: 0.1s;
+      }
+      .stagger-2 {
+        transition-delay: 0.2s;
+      }
+      .stagger-3 {
+        transition-delay: 0.3s;
+      }
+      .stagger-4 {
+        transition-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body id="home" class="wide body-light workshop-page">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Wrap all content -->
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header fixed">
+        <div class="container">
+          <div class="header-wrapper clearfix">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="#home" class="scroll-to" id="menu-toggle">
+                <span>
+                  <i class="ri-menu-2-line"></i>
+                </span>
+                MENU
+              </a>
+            </div>
+            <div class="logo-container-wceme">
+              <img src="./assets/img/logo/2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /HEADER -->
+
+      <!-- SLIDING MENU -->
+      <div id="sliding-menu" class="sliding-menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-logo">
+              <img src="./assets/img/logo/1.png" alt="WCEME 2025" />
+            </div>
+            <button class="menu-close" id="menu-close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <nav class="menu-nav">
+            <ul class="menu-list">
+              <li class="menu-item" data-delay="100">
+                <a href="./index.html" class="menu-link">
+                  <i class="ri-home-line"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="200">
+                <a href="./workshops.html" class="menu-link">
+                  <i class="ri-tools-line"></i>
+                  <span>Workshops</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="300">
+                <a href="./pathways.html" class="menu-link">
+                  <i class="ri-route-line"></i>
+                  <span>Pathways</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="400">
+                <a href="./fdp.html" class="menu-link">
+                  <i class="ri-graduation-cap-line"></i>
+                  <span>Faculty Development Programme</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="500">
+                <a href="./abstract-submission.html" class="menu-link">
+                  <i class="ri-file-text-line"></i>
+                  <span>Submit Abstract</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="600">
+                <a
+                  href="./paper-and-poster-presentations.html"
+                  class="menu-link"
+                >
+                  <i class="ri-presentation-line"></i>
+                  <span>Paper & Poster Presentations </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="700">
+                <a href="./about-us.html" class="menu-link">
+                  <i class="ri-information-line"></i>
+                  <span>About Us </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="800">
+                <a href="./assets/img/organizingcommitee.pdf" class="menu-link">
+                  <i class="ri-team-line"></i>
+                  <span>Organizing Committee</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-footer">
+            <p class="menu-footer-text">WCEME 2025</p>
+            <p class="menu-footer-subtext">September 25-28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- /SLIDING MENU -->
+
+      <!-- Content area -->
+      <div class="content-area">
+        <div id="main">
+          <!-- page header -->
+          <section id="page-header-sec" class="modern-page-header">
+            <div class="decorative-element circle1"></div>
+            <div class="decorative-element circle2"></div>
+            <div class="decorative-element triangle"></div>
+            <div class="container">
+              <div class="header-content">
+                <div class="header-badge">
+                  <span class="badge-text">WCEME 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /page header -->
+        </div>
+
+        <!-- PAGE SCHEDULE -->
+        <section class="page-fdp-sections">
+          <div class="container">
+            <div class="faculty-program">
+              <!-- Hero Section -->
+              <div class="hero-section fade-in-up">
+                <div class="program-badge">Faculty Development Program</div>
+                <h1 class="hero-title">
+                  Navigating <span class="highlight">the Shift</span>
+                </h1>
+                <p class="hero-subtitle">
+                  A PQRS-Focused Faculty Development Program for Emerging EM
+                  Leaders
+                </p>
+              </div>
+
+              <!-- Profile Section -->
+              <div class="profile-section fade-in-up stagger-1">
+                <div class="profile-header">
+                  <div class="profile-image">
+                    <img src="./assets/team/12.jpg" alt="Venkat Kotamraju" />
+                  </div>
+                  <h2 class="doctor-name">Dr. Venkat Kotamraju</h2>
+                  <div class="credentials-wrapper">
+                    <div class="credentials">
+                      MBBS MRCSEd PGDipMedTox MAcadMed CEDE CPPS CMQ CPHRM
+                      RCPathME FISQua FICM FEBEM FRCEM
+                    </div>
+                  </div>
+                  <p class="titles">
+                    Distinguished Consultant in Emergency Medicine | Visionary
+                    Healthcare Leader | Emergency Toxicologist | International
+                    Examiner | Global Medical Educator | Master Trainer in
+                    Communication, Human Factors & Medical Soft Skills |
+                    International Faculty, Harvard Emergency Physicians
+                  </p>
+                  <div
+                    class="session-card fade-in-up stagger-3"
+                    data-session="profile"
+                  >
+                    <button class="read-more-btn">
+                      View Profile <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Program Schedule -->
+              <div class="schedule-section fade-in-up stagger-2">
+                <div class="section-header">
+                  <div class="section-icon">
+                    <i class="ri-calendar-event-fill" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="section-title">Program Details</h3>
+                </div>
+
+                <div class="program-meta-card">
+                  <div class="meta-grid-parent">
+                    <div class="meta-grid">
+                      <div class="meta-item">
+                        <div class="meta-icon">
+                          <i class="ri-calendar-fill" aria-hidden="true"></i>
+                        </div>
+                        <div class="meta-text">
+                          <strong>Date:</strong> 28.09.2024
+                        </div>
+                      </div>
+                      <div class="meta-item">
+                        <div class="meta-icon">
+                          <i class="ri-time-fill" aria-hidden="true"></i>
+                        </div>
+                        <div class="meta-text">
+                          <strong>Time:</strong> 9:00 AM – 1:00 PM
+                        </div>
+                      </div>
+                    </div>
+                    <div class="meta-item">
+                      <div class="meta-icon">
+                        <i class="ri-group-fill" aria-hidden="true"></i>
+                      </div>
+                      <div class="meta-text">
+                        <strong>Open to:</strong> Mid-level faculty
+                        transitioning from specialities such as Medicine,
+                        Anaesthesia, Surgery, Respiratory Medicine, and
+                        Orthopaedics into Emergency Medicine
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-grid">
+                  <div
+                    class="session-card fade-in-up stagger-3"
+                    data-session="welcome"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        09:00 – 09:10 AM
+                      </div>
+                      <div class="session-number">1</div>
+                    </div>
+                    <h4 class="session-title">
+                      Welcome & Icebreaker: "From Silos to Synergy"
+                    </h4>
+                    <p class="session-preview">
+                      An interactive introduction to set the stage for
+                      collaborative learning
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-4"
+                    data-session="management"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        09:10 – 09:50 AM
+                      </div>
+                      <div class="session-number">2</div>
+                    </div>
+                    <h4 class="session-title">
+                      Leading from the Hot Zone: ED Management 101
+                    </h4>
+                    <p class="session-preview">
+                      Case-based discussions on practical leadership and
+                      management essentials
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-3"
+                    data-session="safety"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        09:50 – 10:30 AM
+                      </div>
+                      <div class="session-number">3</div>
+                    </div>
+                    <h4 class="session-title">
+                      Safety Net: Embedding Patient Safety Culture in EM
+                    </h4>
+                    <p class="session-preview">
+                      Group tasks and scenario debriefing on fostering
+                      safety-first culture
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card break-card fade-in-up stagger-4"
+                    data-session="break"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-cup-fill" aria-hidden="true"></i>
+                        10:30 – 10:45 AM
+                      </div>
+                      <div class="session-number">
+                        <i class="ri-pause-circle-fill"></i>
+                      </div>
+                    </div>
+                    <h4 class="session-title">Tea Break & Peer Networking</h4>
+                    <p class="session-preview">
+                      Refreshment and networking opportunity
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-3"
+                    data-session="quality"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        10:45 – 11:25 AM
+                      </div>
+                      <div class="session-number">4</div>
+                    </div>
+                    <h4 class="session-title">
+                      Quality Quest: Data, Dashboards & Decisions
+                    </h4>
+                    <p class="session-preview">
+                      Hands-on workshop with QI tools and PDSA methodology
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-4"
+                    data-session="research"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        11:25 – 12:05 PM
+                      </div>
+                      <div class="session-number">5</div>
+                    </div>
+                    <h4 class="session-title">
+                      Research on the Run: Turning EM Practice into Inquiry
+                    </h4>
+                    <p class="session-preview">
+                      Transform clinical moments into research questions using
+                      PICO framework
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-3"
+                    data-session="leadership"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        12:05 – 12:45 PM
+                      </div>
+                      <div class="session-number">6</div>
+                    </div>
+                    <h4 class="session-title">
+                      Soft Power: Leading with Empathy & Influence in ED
+                    </h4>
+                    <p class="session-preview">
+                      Frameworks for empathy-driven communication and conflict
+                      resolution
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+
+                  <div
+                    class="session-card fade-in-up stagger-4"
+                    data-session="closing"
+                  >
+                    <div class="session-header">
+                      <div class="session-time">
+                        <i class="ri-time-fill" aria-hidden="true"></i>
+                        12:45 – 01:00 PM
+                      </div>
+                      <div class="session-number">7</div>
+                    </div>
+                    <h4 class="session-title">
+                      Closing Reflections & Commitments to Change
+                    </h4>
+                    <p class="session-preview">
+                      Summary, feedback, and commitment to actionable changes
+                    </p>
+                    <button class="read-more-btn">
+                      Read More <i class="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detail Panel -->
+              <div class="detail-panel" id="detailPanel">
+                <div class="detail-header">
+                  <button class="close-btn" id="closeBtn">
+                    <i class="ri-close-line"></i>
+                  </button>
+                  <div class="detail-time" id="detailTime"></div>
+                  <h3 class="detail-title" id="detailTitle"></h3>
+                </div>
+                <div class="detail-content">
+                  <div class="detail-description" id="detailDescription"></div>
+                  <div class="objectives-card" id="objectivesSection">
+                    <h4 class="objectives-title">
+                      <i class="ri-target-line" aria-hidden="true"></i>
+                      Learning Objectives
+                    </h4>
+                    <ul class="objectives-list" id="objectivesList"></ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Overlay -->
+              <div class="overlay" id="overlay"></div>
+            </div>
+          </div>
+        </section>
+        <!-- /PAGE SCHEDULE -->
+      </div>
+      <!-- /Content area -->
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-meta">
+          <div class="container text-center">
+            <div class="clearfix">
+              <ul class="social-line list-inline">
+                <li data-animation="flipInY" data-animation-delay="100">
+                  <a
+                    href="https://twitter.com/avmch3"
+                    target="_blank"
+                    class="social-icon twitter"
+                    ><i class="ri-twitter-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="200">
+                  <a
+                    href="https://www.linkedin.com/company/avmch"
+                    target="_blank"
+                    class="social-icon linkedin"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="300">
+                  <a
+                    href="https://www.facebook.com/aarupadaiveedumedicalcollege/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    ><i class="ri-facebook-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="400">
+                  <a
+                    href="https://www.youtube.com/channel/UCCIX3YXBdgtWURgGS48UR4g"
+                    target="_blank"
+                    class="social-icon youtube"
+                    ><i class="ri-youtube-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="500">
+                  <a
+                    href="https://instagram.com/avmch_puducherry?utm_medium=copy_link"
+                    target="_blank"
+                    class="social-icon instagram"
+                    ><i class="ri-instagram-fill"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <span
+              class="copyright"
+              data-animation="fadeInUp"
+              data-animation-delay="100"
+              >&copy; 2025 - Aarupadai Veedu Medical College and Hospital</span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- /FOOTER -->
+
+      <div class="to-top"><i class="fa fa-angle-up"></i></div>
+    </div>
+    <!-- /Wrap all content -->
+
+    <!-- Popup: Register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <button
+          type="button"
+          class="close close-btn"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <section class="popup-register">
+          <h1 class="section-title">
+            <span
+              data-animation="flipInY"
+              data-animation-delay="300"
+              class="icon-inner"
+              ><span class="fa-stack"
+                ><i class="fa rhex fa-stack-2x"></i
+                ><i class="fa fa-ticket fa-stack-1x"></i></span
+            ></span>
+            <span
+              data-animation="fadeInRight"
+              data-animation-delay="500"
+              class="title-inner"
+              >Register now <small> / dont mıss event!</small></span
+            >
+          </h1>
+          <form
+            id="registration-form"
+            name="registration-form"
+            class="registration-form"
+            action="#"
+            method="post"
+          >
+            <iframe
+              src="//eventbrite.com/tickets-external?eid=18432753863&ref=etckt"
+              frameborder="0"
+              height="300px"
+              width="100%"
+              vspace="0"
+              hspace="0"
+              marginheight="5"
+              marginwidth="5"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
+          </form>
+        </section>
+      </div>
+    </div>
+    <!-- /Popup: Register -->
+
+    <!-- JS Global -->
+
+    <!--[if lt IE 9
+      ]><script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script
+    ><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/superfish/js/superfish.js"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/plugins/placeholdem.min.js"></script>
+    <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="assets/plugins/owlcarousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/waypoints/waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!--<script src="assets/js/theme-ajax-mail.js"></script>-->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        theme.init();
+        theme.initMainSlider();
+        theme.initCountDown();
+        theme.initPartnerSlider();
+        theme.initTestimonials();
+        theme.initGoogleMap();
+      });
+      jQuery(window).load(function () {
+        theme.initAnimation();
+      });
+
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy({ offset: 100, target: ".navigation" });
+      });
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+      jQuery(window).resize(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+
+      jQuery(document).ready(function () {
+        theme.onResize();
+      });
+      jQuery(window).load(function () {
+        theme.onResize();
+      });
+      jQuery(window).resize(function () {
+        theme.onResize();
+      });
+
+      jQuery(window).load(function () {
+        if (location.hash != "") {
+          var hash = "#" + window.location.hash.substr(1);
+          if (hash.length) {
+            jQuery("html,body")
+              .delay(0)
+              .animate(
+                {
+                  scrollTop: jQuery(hash).offset().top - 44 + "px",
+                },
+                {
+                  duration: 1200,
+                  easing: "easeInOutExpo",
+                }
+              );
+          }
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Session data
+        const sessionData = {
+          profile: {
+            time: "Profile",
+            title: "Dr. Venkat Kotamraju - Faculty Profile",
+            description:
+              "Dr. Venkat Kotamraju is a preeminent Consultant in Emergency Medicine with over 20 years of transformative experience that has significantly impacted clinical care, medical education, and healthcare leadership. He practices at the Royal Derby Hospital in the UK and serves as the Emergency Medicine Training Program Director for Health Education East Midlands. Additionally, Dr. Kotamraju is the Royal College of Emergency Medicine (RCEM) UK East Midlands Regional Chair, leading initiatives to enhance the quality of emergency care across the region. Throughout his career, he has set new benchmarks in patient care and has pioneered training methods and quality improvement strategies that have redefined standards in the field.\n\nAs an international examiner and expert trainer, Dr. Kotamraju has profoundly influenced the careers of thousands of healthcare professionals worldwide. His expertise in critical areas such as communication, human factors, and essential medical soft skills makes him a highly sought-after educator. He conducts innovative workshops to enhance team dynamics and improve patient care, particularly in high-pressure emergency settings.\n\nDr. Kotamraju is also recognised globally as an expert in Emergency Clinical Toxicology. His extensive clinical experience has led to advancements in educating and treating toxicological emergencies. As the International Editor of the American Journal of Emergency Medicine, he plays a vital role in shaping and disseminating innovative clinical knowledge and best practices that elevate emergency medicine worldwide.\n\nA passionate advocate for patient safety and quality improvement, Dr. Kotamraju is Vice Chair of the Quality and Safety Special Interest Group at the International Federation of Emergency Medicine (ICEM). He is instrumental in the Royal College of Emergency Medicine's initiative on Quality and Excellence in Clinical Care (RCEM QECC) and tirelessly works to uphold the highest standards in emergency medical practice.\n\nDr. Kotamraju holds the distinguished title of ACEP Teaching Fellow and shows unwavering commitment to advancing medical education. His leadership and dedication set remarkable global benchmarks for emergency care and healthcare education excellence.\n\nRenowned for his engaging presentations, Dr. Kotamraju is regularly invited to speak at prestigious international conferences across the USA, Europe, UAE, Saudi Arabia, Oman, and India, where he shares his insights and expertise in Emergency Medicine, Critical Care, and Toxicology.",
+            objectives: [],
+          },
+          welcome: {
+            time: "09:00 – 09:10 AM",
+            title: 'Welcome & Icebreaker: "From Silos to Synergy"',
+            description:
+              "An interactive introduction designed to break down barriers and foster collaboration among faculty members transitioning into Emergency Medicine. This engaging session sets the tone for the day's learning journey and helps participants connect with their peers.",
+            objectives: [],
+          },
+          management: {
+            time: "09:10 – 09:50 AM",
+            title: "Leading from the Hot Zone: ED Management 101",
+            description:
+              "This session of case-based discussion explores practical leadership and management essentials specific to the ED, including staffing, flow control, inter-speciality communication, and real-time decision-making under pressure. Anchored in the realities of transitioning clinicians.",
+            objectives: [
+              "Analyse the unique structural and operational challenges of emergency departments",
+              "Apply ED management strategies such as flow control, escalation huddles, and resource optimisation",
+              "Develop a plan to engage other specialities in shared patient care goals",
+            ],
+          },
+          safety: {
+            time: "09:50 – 10:30 AM",
+            title: "Safety Net: Embedding Patient Safety Culture in EM",
+            description:
+              "This session of group task and scenario debriefing unpacks how to foster a safety-first culture in high-pressure settings. Participants will reflect on systems, human factors, and error disclosure through incident simulations and real cases.",
+            objectives: [
+              "Identify key contributors to safety incidents in emergency care",
+              "Evaluate the impact of human factors and system design on patient safety",
+              "Formulate a unit-level action plan for proactive safety initiatives",
+            ],
+          },
+          break: {
+            time: "10:30 – 10:45 AM",
+            title: "Tea Break & Peer Networking",
+            description:
+              "A refreshing break to network with colleagues, share insights from the morning sessions, and prepare for the upcoming workshops. This time is valuable for building professional connections and informal learning.",
+            objectives: [],
+          },
+          quality: {
+            time: "10:45 – 11:25 AM",
+            title: "Quality Quest: Data, Dashboards & Decisions",
+            description:
+              "From Metrics to Meaning: This mini workshop with QI tools gives you hands-on training on how to use QI dashboards, audit tools, and PDSA cycles to drive clinical improvement in the ED.",
+            objectives: [
+              "Interpret standard EM quality metrics and dashboards",
+              "Design a basic QI project using the PDSA methodology",
+              "Collaborate with multidisciplinary teams to implement change initiatives",
+            ],
+          },
+          research: {
+            time: "11:25 – 12:05 PM",
+            title: "Research on the Run: Turning EM Practice into Inquiry",
+            description:
+              "Emergency physicians make rapid decisions: This session helps transform those moments into clinical questions and research ideas using the PICO framework.",
+            objectives: [
+              "Construct answerable research questions from everyday clinical dilemmas",
+              "Use the PICO model to formulate and refine clinical queries",
+              "Develop a plan to contribute to local or national EM research efforts",
+            ],
+          },
+          leadership: {
+            time: "12:05 – 12:45 PM",
+            title: "Soft Power: Leading with Empathy & Influence in ED",
+            description:
+              'Soft skills are complex tools: This session explores frameworks like the "STATE" model and emotional intelligence strategies to manage conflict, communicate under stress, and lead multidisciplinary teams.',
+            objectives: [
+              "Demonstrate empathy-driven communication in high-stakes conversations",
+              "Apply conflict resolution frameworks in challenging team interactions",
+              "Integrate emotional intelligence strategies in day-to-day clinical leadership",
+            ],
+          },
+          closing: {
+            time: "12:45 – 01:00 PM",
+            title: "Closing Reflections & Commitments to Change",
+            description:
+              "A reflective session to consolidate learning, share insights, and commit to actionable changes in practice. Participants will provide feedback and set personal development goals for their ongoing journey in Emergency Medicine.",
+            objectives: [],
+          },
+        };
+
+        // Initialize animations
+        const observeElements = () => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          document.querySelectorAll(".fade-in-up").forEach((el) => {
+            observer.observe(el);
+          });
+        };
+
+        // Session card interactions
+        const sessionCards = document.querySelectorAll(".session-card");
+        const detailPanel = document.getElementById("detailPanel");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.getElementById("closeBtn");
+
+        sessionCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            const sessionId = this.getAttribute("data-session");
+            const session = sessionData[sessionId];
+
+            if (session) {
+              // Populate detail panel
+              document.getElementById("detailTime").textContent = session.time;
+              document.getElementById("detailTitle").textContent =
+                session.title;
+
+              // Convert line breaks to HTML paragraphs
+              const descriptionElement =
+                document.getElementById("detailDescription");
+              const paragraphs = session.description.split("\n\n");
+              descriptionElement.innerHTML = paragraphs
+                .map((p) => `<p>${p}</p>`)
+                .join("");
+
+              const objectivesList = document.getElementById("objectivesList");
+              const objectivesSection =
+                document.getElementById("objectivesSection");
+
+              if (session.objectives.length > 0) {
+                objectivesList.innerHTML = "";
+                session.objectives.forEach((objective) => {
+                  const li = document.createElement("li");
+                  li.textContent = objective;
+                  objectivesList.appendChild(li);
+                });
+                objectivesSection.style.display = "block";
+              } else {
+                objectivesSection.style.display = "none";
+              }
+
+              // Show panel
+              detailPanel.classList.add("open");
+              overlay.classList.add("active");
+            }
+          });
+
+          // Keyboard accessibility
+          card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              this.click();
+            }
+          });
+
+          card.setAttribute("tabindex", "0");
+          card.setAttribute("role", "button");
+        });
+
+        // Close panel functionality
+        const closePanel = () => {
+          detailPanel.classList.remove("open");
+          overlay.classList.remove("active");
+        };
+
+        closeBtn.addEventListener("click", closePanel);
+        overlay.addEventListener("click", closePanel);
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && detailPanel.classList.contains("open")) {
+            closePanel();
+          }
+        });
+
+        // Initialize
+        observeElements();
+      });
+    </script>
+  </body>
+</html>

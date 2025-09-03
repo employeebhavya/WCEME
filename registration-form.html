@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCEME 2025 Registration Form - AVMCH</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --primary-color: #f67330;
+        --secondary-color: #2c3e50;
+        --success-color: #27ae60;
+        --error-color: #e74c3c;
+        --light-bg: #eaeaea;
+        --card-bg: #ffffff;
+        --border-color: #ddd;
+        --text-muted: #6c757d;
+        --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--light-bg);
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+        color: var(--secondary-color);
+      }
+
+      .back-to-home {
+        position: fixed;
+        top: 60px;
+        left: 20px;
+        z-index: 1000;
+        background: var(--card-bg);
+        color: var(--primary-color);
+        padding: 12px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        box-shadow: var(--shadow-medium);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(246, 115, 48, 0.2);
+        width: fit-content;
+      }
+
+      .back-to-home:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(246, 115, 48, 0.25);
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+      }
+
+      .form-container {
+        max-width: 1000px;
+        margin: 40px auto 40px;
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: var(--shadow-medium);
+        overflow: hidden;
+      }
+
+      /* Tab Styles */
+      .tab-container {
+        background: #f8f9fa;
+        border-bottom: 1px solid var(--border-color);
+        margin: 0;
+      }
+
+      .tab-nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: #f8f9fa;
+      }
+
+      .tab-nav li {
+        flex: 1;
+      }
+
+      .tab-nav button {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 16px 24px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+      }
+
+      .tab-nav button.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+        background: var(--card-bg);
+      }
+
+      .tab-nav button:hover {
+        color: var(--primary-color);
+        background: rgba(246, 115, 48, 0.05);
+      }
+
+      .tab-content {
+        display: none;
+        padding: 30px;
+        background: var(--card-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .form-header {
+        background: linear-gradient(135deg, var(--primary-color), #e55d1f);
+        color: white;
+        padding: 5px 20px 20px 20px;
+        text-align: center;
+        position: relative;
+      }
+      .form-header img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .form-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      }
+
+      .form-header h1 {
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+      }
+
+      .form-header p {
+        font-size: 16px;
+        opacity: 0.95;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+        font-weight: 300;
+      }
+
+      .form-body {
+        padding: 0;
+        background: var(--card-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .success-message,
+      .error-message-global {
+        margin: 20px 30px 0 30px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .section-title {
+        color: var(--secondary-color);
+        font-size: 20px;
+        font-weight: 600;
+        margin: 32px 0 20px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background: var(--primary-color);
+      }
+
+      .section-title:first-child {
+        margin-top: 0;
+      }
+
+      .section-title i {
+        color: var(--primary-color);
+        font-size: 18px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        font-weight: 500;
+        color: var(--secondary-color);
+        margin-bottom: 8px;
+        display: block;
+        font-size: 15px;
+      }
+
+      .required {
+        color: var(--error-color);
+        font-weight: 400;
+      }
+
+      .optional {
+        color: #666;
+        font-weight: 400;
+        font-size: 13px;
+      }
+
+      .form-control {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 15px;
+        transition: all 0.2s ease;
+        width: 100%;
+        background: var(--card-bg);
+        font-family: inherit;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(246, 115, 48, 0.1);
+        outline: none;
+        background: var(--card-bg);
+      }
+
+      .form-control.error {
+        border-color: var(--error-color);
+        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+      }
+
+      .error-message {
+        color: var(--error-color);
+        font-size: 14px;
+        margin-top: 6px;
+        display: none;
+        font-weight: 400;
+      }
+
+      .form-control.error + .error-message {
+        display: block;
+      }
+
+      .checkbox-group,
+      .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .checkbox-item,
+      .radio-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        background: var(--card-bg);
+      }
+
+      .checkbox-item:hover,
+      .radio-item:hover {
+        border-color: var(--primary-color);
+        background-color: rgba(246, 115, 48, 0.03);
+      }
+
+      .checkbox-item input:checked + label,
+      .radio-item input:checked + label {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+
+      .checkbox-item input:checked,
+      .radio-item input:checked {
+        accent-color: var(--primary-color);
+      }
+
+      .checkbox-item label,
+      .radio-item label {
+        margin: 0;
+        font-weight: 400;
+        cursor: pointer;
+        flex: 1;
+      }
+
+      .file-upload {
+        border: 2px dashed var(--border-color);
+        border-radius: 12px;
+        padding: 32px 24px;
+        text-align: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        background: rgba(246, 115, 48, 0.02);
+      }
+
+      .file-upload:hover {
+        border-color: var(--primary-color);
+        background-color: rgba(246, 115, 48, 0.05);
+      }
+
+      .file-upload.error {
+        border-color: #e74c3c;
+        background-color: rgba(231, 76, 60, 0.05);
+      }
+
+      .file-upload input[type="file"] {
+        display: none;
+      }
+
+      .file-upload-text {
+        color: var(--text-muted);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .instructions-box {
+        background: #f8fafe;
+        border: 1px solid #e3f2fd;
+        border-left: 4px solid var(--primary-color);
+        padding: 24px;
+        border-radius: 8px;
+        margin: 24px 0;
+      }
+
+      .instructions-box h4 {
+        color: var(--secondary-color);
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .instructions-box ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .instructions-box li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+        font-size: 15px;
+        color: var(--text-muted);
+      }
+
+      .payment-section {
+        background: #fafbfc;
+        border: 1px solid #e8ecef;
+        padding: 24px;
+        border-radius: 12px;
+        margin: 24px 0;
+      }
+
+      .payment-section h4 {
+        color: var(--secondary-color);
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .payment-section p {
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .payment-section strong {
+        color: var(--secondary-color);
+        font-weight: 500;
+      }
+
+      .qr-code {
+        text-align: center;
+        margin: 24px 0;
+      }
+
+      .qr-code p {
+        font-weight: 500;
+        margin-bottom: 16px;
+        color: var(--secondary-color);
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 140px;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: var(--shadow-light);
+      }
+
+      .btn-primary:hover {
+        background: #e55d1f;
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-medium);
+        color: white;
+        text-decoration: none;
+      }
+
+      .btn-secondary {
+        background: var(--card-bg);
+        color: var(--text-muted);
+        border: 1px solid var(--border-color);
+      }
+
+      .btn-secondary:hover {
+        background: #f8f9fa;
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 24px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin: 16px 0;
+      }
+
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 12px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .success-message,
+      .error-message-global {
+        padding: 16px 20px;
+        border-radius: 8px;
+        margin: 16px 0;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+        font-size: 15px;
+      }
+
+      .success-message {
+        background: rgba(39, 174, 96, 0.1);
+        color: var(--success-color);
+        border: 1px solid rgba(39, 174, 96, 0.2);
+      }
+
+      .error-message-global {
+        background: rgba(231, 76, 60, 0.1);
+        color: var(--error-color);
+        border: 1px solid rgba(231, 76, 60, 0.2);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .back-to-home {
+          position: relative;
+          top: auto;
+          left: auto;
+          margin-bottom: 20px;
+          align-self: flex-start;
+        }
+
+        .form-container {
+          margin: 20px auto;
+          border-radius: 12px;
+        }
+
+        .form-header {
+          padding: 24px 20px;
+        }
+
+        .form-header h1 {
+          font-size: 29px;
+        }
+
+        .form-body {
+          padding: 24px 20px;
+        }
+
+        .tab-content {
+          padding: 24px 20px;
+        }
+
+        .success-message,
+        .error-message-global {
+          margin: 20px 20px 0 20px;
+        }
+
+        .btn-group {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .checkbox-group,
+        .radio-group {
+          gap: 8px;
+        }
+
+        .checkbox-item,
+        .radio-item {
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .form-header {
+          padding: 20px 16px;
+        }
+
+        .form-body {
+          padding: 20px 16px;
+        }
+
+        .tab-content {
+          padding: 20px 16px;
+        }
+
+        .success-message,
+        .error-message-global {
+          margin: 20px 16px 0 16px;
+        }
+
+        .tab-nav button {
+          padding: 12px 16px;
+          font-size: 14px;
+        }
+
+        .section-title {
+          font-size: 18px;
+          margin: 24px 0 16px 0;
+        }
+
+        .file-upload {
+          padding: 24px 16px;
+        }
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1420px) {
+        .back-to-home {
+          top: 15px !important;
+        }
+        .form-container {
+          margin-top: 75px !important;
+        }
+      }
+
+      /* To Top Button Styles */
+      .to-top-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary-color), #e55d1f);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(246, 115, 48, 0.3);
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+      }
+
+      .to-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .to-top-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(246, 115, 48, 0.5);
+        background: linear-gradient(135deg, #e55d1f, #d04a1e);
+      }
+
+      .to-top-btn i {
+        font-size: 20px;
+      }
+
+      label {
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 768px) {
+        .to-top-btn {
+          bottom: 100px;
+          right: 15px;
+          width: 45px;
+          height: 45px;
+        }
+
+        .to-top-btn i {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home">
+      <i class="ri-arrow-left-line"></i>
+      Back to Home
+    </a>
+
+    <div class="form-container">
+      <div class="form-header">
+        <img src="./assets/img/logo/2.png" alt="" />
+        <h1><i class="ri-hospital-line"></i> WCEME 2025</h1>
+        <p>Aarupadai Veedu Medical College & Hospital - Registration Form</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tab-container">
+        <ul class="tab-nav">
+          <li>
+            <button type="button" class="tab-button active" data-tab="student">
+              Student Registration
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tab-button" data-tab="faculty">
+              Faculty Registration
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-body">
+        <div class="success-message" id="successMessage">
+          <i class="ri-check-circle-line"></i>
+          Registration submitted successfully! You will receive a confirmation
+          email shortly.
+        </div>
+
+        <div class="error-message-global" id="errorMessage">
+          <i class="ri-error-warning-line"></i>
+          <span id="errorText">
+            Please fill in all required fields correctly.
+          </span>
+        </div>
+
+        <!-- Student Registration Tab -->
+        <div id="student-tab" class="tab-content active">
+          <form
+            id="studentRegistrationForm"
+            action="process-registration-clean.php"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <!-- Personal Information -->
+            <div class="section-title">
+              <i class="ri-user-line"></i>
+              Personal Information
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fullName"
+                    >Full Name (as needed in certificate)
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    name="full_name"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter your full name in capitals
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="title"
+                    >Title <span class="required">*</span></label
+                  >
+                  <select class="form-control" id="title" name="title" required>
+                    <option value="">Select Title</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Prof.">Prof.</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="error-message">Please select a title</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email"
+                    >Email <span class="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter a valid email address
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phone"
+                    >Phone Number <span class="required">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter a valid phone number
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="affiliation"
+                    >Affiliation/Institution
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="affiliation"
+                    name="affiliation"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter your affiliation/institution
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="designation"
+                    >Designation/Position <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="designation"
+                    name="designation"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter your designation/position
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="department"
+                    >Department <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="department"
+                    name="department"
+                    required
+                  />
+                  <div class="error-message">Please enter your department</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="nationality"
+                    >Nationality <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nationality"
+                    name="nationality"
+                    required
+                  />
+                  <div class="error-message">Please enter your nationality</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Gender <span class="required">*</span></label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        value="Male"
+                        required
+                      />
+                      <label for="male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        value="Female"
+                        required
+                      />
+                      <label for="female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="others"
+                        name="gender"
+                        value="Others"
+                        required
+                      />
+                      <label for="others">Others</label>
+                    </div>
+                  </div>
+                  <div class="error-message">Please select your gender</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Medical Council Details -->
+            <div class="section-title">
+              <i class="ri-hospital-line"></i>
+              Medical Council Details
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_medical_council_name"
+                    >Medical Council Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_medical_council_name"
+                    name="medical_council_name"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter medical council name
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_medical_council_number"
+                    >Medical Council Registration Number
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_medical_council_number"
+                    name="medical_council_number"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter medical council registration number
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bonafide"
+                >Student Bonafide Certificate
+                <span class="required">*</span></label
+              >
+              <div
+                class="file-upload"
+                onclick="document.getElementById('bonafide').click()"
+              >
+                <input
+                  type="file"
+                  id="bonafide"
+                  name="bonafide"
+                  accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                  required
+                />
+                <div class="file-upload-text">
+                  <i
+                    class="ri-upload-cloud-2-line"
+                    style="font-size: 2rem; color: var(--primary-color)"
+                  ></i
+                  ><br />
+                  Click to upload bonafide certificate<br />
+                  <small
+                    >Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10
+                    MB)</small
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Important Instructions -->
+            <div class="instructions-box">
+              <h4>
+                <i class="ri-information-line"></i> Important Instructions for
+                Registrants
+              </h4>
+              <ul>
+                <li>
+                  Students must submit a certificate from their Head of
+                  Department.
+                </li>
+                <li>
+                  Registration fee for the conference includes delegate kit,
+                  high tea, and lunch.
+                </li>
+                <li>
+                  Each delegate can register for a maximum of two workshops and
+                  one masterclass.
+                </li>
+                <li>
+                  If registering for 2 days Cadaveric workshop, only one
+                  masterclass can be registered.
+                </li>
+                <li>
+                  Conference registration is a must to attend a workshop and
+                  Masterclasses and paper /poster presentations.
+                </li>
+                <li>
+                  Undergraduate students can avail paper/poster presentations
+                  with their registration for UG interactive pathway.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Conference Fee -->
+            <div class="section-title">
+              <i class="ri-money-rupee-circle-line"></i>
+              Conference Fee
+            </div>
+
+            <div class="form-group">
+              <label
+                >Conference Fee for Registrants
+                <span class="required">*</span></label
+              >
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="delegates"
+                    name="conference_fee"
+                    value="Delegates - ₹7000 ($100)"
+                    required
+                  />
+                  <label for="delegates">Delegates - ₹7000 ($100)</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="pg"
+                    name="conference_fee"
+                    value="PG - ₹6000"
+                    required
+                  />
+                  <label for="pg">PG - ₹6000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="ug"
+                    name="conference_fee"
+                    value="UG - ₹3000"
+                    required
+                  />
+                  <label for="ug">UG - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="ahs"
+                    name="conference_fee"
+                    value="AHS/Nursing/Paramedic - ₹2000"
+                    required
+                  />
+                  <label for="ahs">AHS / Nursing / Paramedic - ₹2000</label>
+                </div>
+              </div>
+              <div class="error-message">
+                Please select your conference fee category
+              </div>
+            </div>
+
+            <!-- Day 1 Workshops -->
+            <div class="section-title">
+              <i class="ri-calendar-line"></i>
+              Day 1 - 25/09/2025: Workshops
+            </div>
+            <p><em>Kindly select any one workshop</em></p>
+
+            <div class="form-group">
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="pocus"
+                    name="day1_workshop"
+                    value="POCUS - ₹3000"
+                  />
+                  <label for="pocus">POCUS - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="mechanical"
+                    name="day1_workshop"
+                    value="MECHANICAL VENTILATION - ₹3000"
+                  />
+                  <label for="mechanical">Mechanical Ventilation - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="pediatric"
+                    name="day1_workshop"
+                    value="PEDIATRIC EMERGENCIES - ₹3000"
+                  />
+                  <label for="pediatric">Pediatric Emergencies - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="cadaveric2day"
+                    name="day1_workshop"
+                    value="Nerve Block - Cadaveric Workshop - ₹6000"
+                  />
+                  <label for="cadaveric2day"
+                    >Nerve Block - Cadaveric Workshop - ₹6000</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 Workshops -->
+            <div class="section-title">
+              <i class="ri-calendar-2-line"></i>
+              Day 2 - 26/09/2025: Workshops
+            </div>
+            <p><em>Kindly select any one workshop</em></p>
+
+            <div class="form-group">
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="obstetric"
+                    name="day2_workshop"
+                    value="OBSTETRIC EMERGENCIES - ₹3000"
+                  />
+                  <label for="obstetric">OBSTETRIC EMERGENCIES - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="disaster"
+                    name="day2_workshop"
+                    value="Disaster Preparedness - ₹3000"
+                  />
+                  <label for="disaster">Disaster Preparedness - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="suturing"
+                    name="day2_workshop"
+                    value="Suturing, Splinting & Dental - ₹3000"
+                  />
+                  <label for="suturing"
+                    >Suturing, Splinting & Dental - ₹3000</label
+                  >
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="resuscitation"
+                    name="day2_workshop"
+                    value="RESUSCITATION SIMULATION - ₹3000"
+                  />
+                  <label for="resuscitation"
+                    >RESUSCITATION SIMULATION - ₹3000</label
+                  >
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="cadaveric_nerve"
+                    name="day2_workshop"
+                    value="Emergency Surgical Skills - Cadaveric Workshop - ₹6000"
+                  />
+                  <label for="cadaveric_nerve"
+                    >Emergency Surgical Skills - Cadaveric Workshop -
+                    ₹6000</label
+                  >
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="toxicology"
+                    name="day2_workshop"
+                    value="TOXICOLOGY - ₹3000"
+                  />
+                  <label for="toxicology">TOXICOLOGY - ₹3000</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="neuro"
+                    name="day2_workshop"
+                    value="NEURO EMERGENCIES - ₹800"
+                  />
+                  <label for="neuro">NEURO EMERGENCIES - ₹800</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 4 Masterclasses -->
+            <div class="section-title">
+              <i class="ri-calendar-check-line"></i>
+              Day 4 - 28/09/2025: Masterclasses and FDP
+            </div>
+            <p>
+              <em
+                >Masterclasses of four hours - Intensive subject discussion from
+                Institute faculties.<br />
+                Faculty development workshop - Patient safety, Quality, Research
+                and Soft skills.</em
+              >
+            </p>
+
+            <div class="form-group">
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="abg"
+                    name="masterclass"
+                    value="ABG - ₹800"
+                  />
+                  <label for="abg">ABG - ₹800</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="ecg"
+                    name="masterclass"
+                    value="ECG - ₹800"
+                  />
+                  <label for="ecg">ECG - ₹800</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="fdp"
+                    name="masterclass"
+                    value="FACULTY DEVELOPMENT PROGRAM - ₹5000"
+                  />
+                  <label for="fdp">FACULTY DEVELOPMENT PROGRAM - ₹5000</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Amount Display -->
+            <div class="section-title" id="price-display" style="display: none">
+              <i class="ri-money-dollar-circle-line"></i>
+              Total Amount:
+              <span id="total-amount" class="text-primary font-weight-bold"
+                >₹0</span
+              >
+            </div>
+
+            <!-- Payment Information -->
+            <div class="section-title">
+              <i class="ri-bank-line"></i>
+              Payment Information
+            </div>
+
+            <div class="payment-section">
+              <h4>
+                <i class="ri-bank-card-line"></i> Account Details for Payment
+              </h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <strong>Account Name:</strong> Aarupadai Veedu Medical
+                    College - Conference Account
+                  </p>
+                  <p><strong>Account Number:</strong> 1348997427</p>
+                  <p><strong>Bank Name:</strong> Kotak Mahindra Bank Ltd</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Branch:</strong> Mission Street, Puducherry</p>
+                  <p><strong>IFSC Code:</strong> KKBK0008955</p>
+                </div>
+              </div>
+
+              <div class="qr-code">
+                <p>
+                  <strong>Or scan the QR code below to pay:</strong>
+                </p>
+                <img src="./assets/img/qr.jpg" alt="qr-code" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="amount"
+                    >Amount Paid (in INR) <span class="required">*</span></label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="amount"
+                    name="amount_paid"
+                    required
+                  />
+                  <div class="error-message">Please enter the amount paid</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="payment_mode"
+                    >Mode of Payment <span class="required">*</span></label
+                  >
+                  <select
+                    class="form-control"
+                    id="payment_mode"
+                    name="payment_mode"
+                    required
+                  >
+                    <option value="">Select Payment Mode</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <div class="error-message">Please select payment mode</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="transaction_id"
+                    >Transaction ID (or) UPI ID of the payee
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="transaction_id"
+                    name="transaction_id"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter transaction ID or UPI ID
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="meal_preference"
+                    >Your Meal Preference <span class="required">*</span></label
+                  >
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="veg"
+                        name="meal_preference"
+                        value="Vegetarian"
+                        required
+                      />
+                      <label for="veg">Vegetarian</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="non_veg"
+                        name="meal_preference"
+                        value="Non-Vegetarian"
+                        required
+                      />
+                      <label for="non_veg">Non-Vegetarian</label>
+                    </div>
+                  </div>
+                  <div class="error-message">Please select meal preference</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="payment_proof"
+                >Payment Proof <span class="required">*</span></label
+              >
+              <div
+                class="file-upload"
+                onclick="document.getElementById('payment_proof').click()"
+              >
+                <input
+                  type="file"
+                  id="payment_proof"
+                  name="payment_proof"
+                  accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                  required
+                />
+                <div class="file-upload-text">
+                  <i
+                    class="ri-upload-cloud-2-line"
+                    style="font-size: 2rem; color: var(--primary-color)"
+                  ></i
+                  ><br />
+                  Click to upload payment proof<br />
+                  <small
+                    >Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10
+                    MB)</small
+                  >
+                </div>
+              </div>
+              <div class="error-message">Please upload payment proof</div>
+            </div>
+
+            <div class="loading" id="loading">
+              <div class="spinner"></div>
+              <p>Processing your registration...</p>
+            </div>
+
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="cancelForm()"
+              >
+                <i class="ri-close-line"></i> Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                <i class="ri-send-plane-line"></i> Submit Registration
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Faculty Registration Tab -->
+        <div id="faculty-tab" class="tab-content">
+          <form
+            id="facultyRegistrationForm"
+            action="process-faculty-registration.php"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <!-- Faculty Personal Information -->
+            <div class="section-title">
+              <i class="ri-user-line"></i>
+              Personal Information
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_full_name">
+                    Full Name (as needed in certificate)
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_full_name"
+                    name="full_name"
+                    style="text-transform: uppercase"
+                    required
+                  />
+                  <div class="error-message">Please enter your full name</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_title">
+                    Title <span class="required">*</span>
+                  </label>
+                  <select
+                    class="form-control"
+                    id="faculty_title"
+                    name="title"
+                    required
+                  >
+                    <option value="">Select Title</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Prof.">Prof.</option>
+                    <option value="Prof. Dr.">Prof. Dr.</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="error-message">Please select your title</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_email">
+                    Email <span class="required">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="faculty_email"
+                    name="email"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter a valid email address
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_phone">
+                    Phone Number <span class="required">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="faculty_phone"
+                    name="phone"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter a valid phone number
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_affiliation"
+                    >Affiliation/Institution
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_affiliation"
+                    name="affiliation"
+                    required
+                  />
+                  <div class="error-message">Please enter your affiliation</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_designation"
+                    >Designation/Position <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_designation"
+                    name="designation"
+                    required
+                  />
+                  <div class="error-message">Please enter your designation</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Information -->
+            <div class="section-title">
+              <i class="ri-building-line"></i>
+              Professional Information
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="faculty_department"
+                    >Department <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_department"
+                    name="department"
+                    required
+                  />
+                  <div class="error-message">Please enter your department</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="faculty_nationality"
+                    >Nationality <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_nationality"
+                    name="nationality"
+                    required
+                  />
+                  <div class="error-message">Please enter your nationality</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Gender <span class="required">*</span></label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_male"
+                        name="gender"
+                        value="Male"
+                        required
+                      />
+                      <label for="faculty_male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_female"
+                        name="gender"
+                        value="Female"
+                        required
+                      />
+                      <label for="faculty_female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_others"
+                        name="gender"
+                        value="Others"
+                        required
+                      />
+                      <label for="faculty_others">Others</label>
+                    </div>
+                  </div>
+                  <div class="error-message">Please select your gender</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conference Details -->
+            <div class="section-title">
+              <i class="ri-calendar-line"></i>
+              Conference Details
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Conference fees <span class="required">*</span></label>
+                  <div class="radio-group">
+                    <small class="form-text"
+                      >Earlier listed hotels are full.</small
+                    >
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_conference_only"
+                        name="conference_fee"
+                        value="₹ 7000 - Conference fees + gala dinner alone without accommodation"
+                        required
+                      />
+                      <label for="faculty_conference_only"
+                        >₹ 7000 - Conference fees + gala dinner alone without
+                        accommodation</label
+                      >
+                    </div>
+                  </div>
+                  <div class="error-message">
+                    Please select your conference fee option
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_accompanying_persons"
+                    >Number of Accompanying Persons ( ₹ 5000 Additional cost per
+                    person ) <span class="required">*</span></label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="faculty_accompanying_persons"
+                    name="accompanying_persons"
+                    min="0"
+                    value="0"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter number of accompanying persons
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Meal Preference <span class="required">*</span></label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_veg"
+                        name="meal_preference"
+                        value="Vegetarian"
+                        required
+                      />
+                      <label for="faculty_veg">Vegetarian</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="faculty_non_veg"
+                        name="meal_preference"
+                        value="Non-Vegetarian"
+                        required
+                      />
+                      <label for="faculty_non_veg">Non-Vegetarian</label>
+                    </div>
+                  </div>
+                  <div class="error-message">
+                    Please select your meal preference
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Medical Council Details -->
+            <div class="section-title">
+              <i class="ri-hospital-line"></i>
+              Medical Council Details
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_medical_council_name"
+                    >Medical Council Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_medical_council_name"
+                    name="medical_council_name"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter medical council name
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="faculty_medical_council_number"
+                    >Medical Council Registration Number
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_medical_council_number"
+                    name="medical_council_number"
+                    required
+                  />
+                  <div class="error-message">
+                    Please enter medical council registration number
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Amount Display -->
+            <div
+              class="section-title"
+              id="faculty-price-display"
+              style="display: none"
+            >
+              <i class="ri-money-dollar-circle-line"></i>
+              Total Amount:
+              <span
+                id="faculty-total-amount"
+                class="text-primary font-weight-bold"
+                >₹0</span
+              >
+            </div>
+
+            <!-- Payment Information -->
+            <div class="section-title">
+              <i class="ri-bank-card-line"></i>
+              Payment Information
+            </div>
+
+            <div class="payment-section">
+              <h4>
+                <i class="ri-bank-card-line"></i> Account Details for Payment
+              </h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <strong>Account Name:</strong> Aarupadai Veedu Medical
+                    College - Conference Account
+                  </p>
+                  <p><strong>Account Number:</strong> 1348997427</p>
+                  <p><strong>Bank Name:</strong> Kotak Mahindra Bank Ltd</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Branch:</strong> Mission Street, Puducherry</p>
+                  <p><strong>IFSC Code:</strong> KKBK0008955</p>
+                </div>
+              </div>
+
+              <div class="qr-code">
+                <p>
+                  <strong>Or scan the QR code below to pay:</strong>
+                </p>
+                <img src="./assets/img/qr.jpg" alt="qr-code" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="faculty_amount_paid"
+                    >Amount Paid (in INR) <span class="required">*</span></label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="faculty_amount_paid"
+                    name="amount_paid"
+                    required
+                  />
+                  <div class="error-message">Please enter the amount paid</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="faculty_payment_mode"
+                    >Mode of Payment <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_payment_mode"
+                    name="payment_mode"
+                    placeholder="Credit Card/Debit Card/UPI/Bank Transfer/Others"
+                    required
+                  />
+                  <div class="error-message">Please enter mode of payment</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="faculty_transaction_id"
+                    >Transaction ID (or) UPI ID of the payee
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="faculty_transaction_id"
+                    name="transaction_id"
+                    required
+                  />
+                  <div class="error-message">Please enter transaction ID</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- File Upload -->
+            <div class="section-title">
+              <i class="ri-file-line"></i>
+              File Upload
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="faculty_payment_proof"
+                    >Payment proof <span class="required">*</span></label
+                  >
+                  <div
+                    class="file-upload"
+                    id="faculty_paymentProofUpload"
+                    onclick="document.getElementById('faculty_payment_proof').click()"
+                  >
+                    <input
+                      type="file"
+                      class="file-input"
+                      id="faculty_payment_proof"
+                      name="payment_proof"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      required
+                    />
+                    <div class="file-upload-text">
+                      <i
+                        class="ri-upload-cloud-line"
+                        style="font-size: 2rem; color: var(--primary-color)"
+                      ></i
+                      ><br />
+                      Choose payment proof file<br />
+                      <small
+                        >Upload 1 supported file: PDF, document or image. Max 10
+                        MB.</small
+                      >
+                    </div>
+                  </div>
+                  <div class="error-message">
+                    Please upload your payment proof
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loading and Submit -->
+            <div class="loading" id="facultyLoading">
+              <div class="spinner"></div>
+              <p>Submitting your registration...</p>
+            </div>
+
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="cancelFacultyForm()"
+              >
+                <i class="ri-close-line"></i> Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                <i class="ri-send-plane-line"></i> Submit Registration
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+      // Tab switching functionality
+      document.querySelectorAll(".tab-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetTab = this.getAttribute("data-tab");
+
+          // Remove active class from all buttons and content
+          document
+            .querySelectorAll(".tab-button")
+            .forEach((btn) => btn.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((content) => content.classList.remove("active"));
+
+          // Add active class to clicked button and corresponding content
+          this.classList.add("active");
+          document.getElementById(targetTab + "-tab").classList.add("active");
+
+          // Hide all price displays first
+          hidePriceDisplays();
+
+          // Recalculate and show appropriate price display
+          if (targetTab === "student") {
+            calculateStudentTotal();
+          } else if (targetTab === "faculty") {
+            calculateFacultyTotal();
+          }
+        });
+      });
+
+      // Student Form validation and submission
+      document
+        .getElementById("studentRegistrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (validateStudentForm()) {
+            submitStudentForm();
+          }
+        });
+
+      // Faculty Form validation and submission
+      document
+        .getElementById("facultyRegistrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (validateFacultyForm()) {
+            submitFacultyForm();
+          }
+        });
+
+      function validateStudentForm() {
+        return validateForm("studentRegistrationForm", "loading");
+      }
+
+      function validateFacultyForm() {
+        return validateForm("facultyRegistrationForm", "facultyLoading");
+      }
+
+      function validateForm(formId, loadingId) {
+        let isValid = true;
+        const form = document.getElementById(formId);
+        const requiredFields = form.querySelectorAll(
+          "input[required], select[required]"
+        );
+
+        // Clear previous errors
+        form.querySelectorAll(".form-control").forEach((field) => {
+          field.classList.remove("error");
+        });
+
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            field.classList.add("error");
+            isValid = false;
+          }
+
+          // Email validation
+          if (field.type === "email" && field.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+              field.classList.add("error");
+              isValid = false;
+            }
+          }
+
+          // Phone validation
+          if (field.type === "tel" && field.value) {
+            const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+            if (!phoneRegex.test(field.value) || field.value.length < 10) {
+              field.classList.add("error");
+              isValid = false;
+            }
+          }
+        });
+
+        // Check radio button groups
+        const radioGroups = ["gender", "conference_fee", "meal_preference"];
+        radioGroups.forEach((group) => {
+          const radios = form.querySelectorAll(`input[name="${group}"]`);
+          const isChecked = Array.from(radios).some((radio) => radio.checked);
+          if (!isChecked) {
+            radios[0].classList.add("error");
+            isValid = false;
+          }
+        });
+
+        // File validation for student form (both files required)
+        if (formId === "studentRegistrationForm") {
+          const paymentProof = form.querySelector("#payment_proof");
+          const bonafide = form.querySelector("#bonafide");
+
+          if (paymentProof && !paymentProof.files[0]) {
+            paymentProof.parentElement.classList.add("error");
+            isValid = false;
+            if (!form.querySelector(".error-message-payment")) {
+              const errorMsg = document.createElement("div");
+              errorMsg.className = "error-message-payment";
+              errorMsg.style.color = "#e74c3c";
+              errorMsg.style.fontSize = "14px";
+              errorMsg.style.marginTop = "5px";
+              errorMsg.textContent =
+                "Payment proof is required. Please upload your payment receipt.";
+              paymentProof.parentElement.appendChild(errorMsg);
+            }
+          } else if (paymentProof) {
+            paymentProof.parentElement.classList.remove("error");
+            const existingError = form.querySelector(".error-message-payment");
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+
+          if (bonafide && !bonafide.files[0]) {
+            bonafide.parentElement.classList.add("error");
+            isValid = false;
+            if (!form.querySelector(".error-message-bonafide")) {
+              const errorMsg = document.createElement("div");
+              errorMsg.className = "error-message-bonafide";
+              errorMsg.style.color = "#e74c3c";
+              errorMsg.style.fontSize = "14px";
+              errorMsg.style.marginTop = "5px";
+              errorMsg.textContent =
+                "Student Bonafide Certificate is required. Please upload your bonafide certificate.";
+              bonafide.parentElement.appendChild(errorMsg);
+            }
+          } else if (bonafide) {
+            bonafide.parentElement.classList.remove("error");
+            const existingError = form.querySelector(".error-message-bonafide");
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+        }
+
+        // File validation for faculty form (only payment proof required)
+        if (formId === "facultyRegistrationForm") {
+          const paymentProof = form.querySelector("#faculty_payment_proof");
+
+          if (paymentProof && !paymentProof.files[0]) {
+            paymentProof.parentElement.classList.add("error");
+            isValid = false;
+            if (!form.querySelector(".error-message-faculty-payment")) {
+              const errorMsg = document.createElement("div");
+              errorMsg.className = "error-message-faculty-payment";
+              errorMsg.style.color = "#e74c3c";
+              errorMsg.style.fontSize = "14px";
+              errorMsg.style.marginTop = "5px";
+              errorMsg.textContent =
+                "Payment proof is required. Please upload your payment receipt.";
+              paymentProof.parentElement.appendChild(errorMsg);
+            }
+          } else if (paymentProof) {
+            paymentProof.parentElement.classList.remove("error");
+            const existingError = form.querySelector(
+              ".error-message-faculty-payment"
+            );
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+        }
+
+        if (!isValid) {
+          showError("Please fill in all required fields correctly.");
+          scrollToFirstError();
+        }
+
+        return isValid;
+      }
+
+      function submitStudentForm() {
+        submitForm(
+          "studentRegistrationForm",
+          "loading",
+          "process-registration-clean.php"
+        );
+      }
+
+      function submitFacultyForm() {
+        submitForm(
+          "facultyRegistrationForm",
+          "facultyLoading",
+          "process-faculty-registration.php"
+        );
+      }
+
+      function submitForm(formId, loadingId, actionUrl) {
+        const loadingDiv = document.getElementById(loadingId);
+        const form = document.getElementById(formId);
+
+        loadingDiv.style.display = "block";
+
+        // Create FormData object
+        const formData = new FormData(form);
+
+        // Submit form via AJAX
+        fetch(actionUrl, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then((text) => {
+            loadingDiv.style.display = "none";
+
+            try {
+              const data = JSON.parse(text);
+              if (data.success) {
+                // Clear form and file upload displays
+                form.reset();
+                clearFileUploadDisplays(formId);
+
+                // Show success message briefly then redirect
+                showSuccess(
+                  "Registration submitted successfully! Redirecting to confirmation page..."
+                );
+
+                // Redirect to thank you page after 2 seconds
+                setTimeout(() => {
+                  window.location.href = "thankyou.html";
+                }, 2000);
+              } else {
+                // Redirect to error page for submission failures
+                setTimeout(() => {
+                  window.location.href = "error-simple.html";
+                }, 1500);
+              }
+            } catch (parseError) {
+              console.error("JSON Parse Error:", parseError);
+              console.error("Response text:", text);
+              // Redirect to error page for server errors
+              setTimeout(() => {
+                window.location.href = "error-simple.html";
+              }, 1500);
+            }
+          })
+          .catch((error) => {
+            loadingDiv.style.display = "none";
+            console.error("Error:", error);
+            // Redirect to error page for network errors
+            setTimeout(() => {
+              window.location.href = "error-simple.html";
+            }, 1500);
+          });
+      }
+
+      function showSuccess(message) {
+        const successDiv = document.getElementById("successMessage");
+        successDiv.textContent = message;
+        successDiv.style.display = "block";
+        document.getElementById("errorMessage").style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function showError(message) {
+        const errorDiv = document.getElementById("errorMessage");
+        document.getElementById("errorText").textContent = message;
+        errorDiv.style.display = "block";
+        document.getElementById("successMessage").style.display = "none";
+      }
+
+      function scrollToFirstError() {
+        const firstError = document.querySelector(
+          ".form-control.error, .file-upload.error"
+        );
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // Focus on the input element, not the container
+          const input = firstError.querySelector("input, select, textarea");
+          if (input && input.type !== "file") {
+            input.focus();
+          }
+        }
+      }
+
+      function cancelForm() {
+        if (
+          confirm(
+            "Are you sure you want to cancel? All entered data will be lost."
+          )
+        ) {
+          showError("Form submission cancelled.");
+          const form = document.getElementById("studentRegistrationForm");
+          form.reset();
+          clearFileUploadDisplays("studentRegistrationForm");
+        }
+      }
+
+      function clearFileUploadDisplays(formId) {
+        const form = document.getElementById(formId);
+
+        // Reset file upload displays to default state
+        const fileUploads = form.querySelectorAll(".file-upload-text");
+        fileUploads.forEach((uploadText) => {
+          const isPaymentProof = uploadText
+            .closest(".file-upload")
+            .querySelector('input[name="payment_proof"]');
+          const isBonafide = uploadText
+            .closest(".file-upload")
+            .querySelector('input[name="bonafide"]');
+
+          if (isPaymentProof) {
+            uploadText.innerHTML = `
+              <i class="ri-upload-cloud-2-line" style="font-size: 2rem; color: var(--primary-color);"></i><br>
+              Click to upload payment proof<br>
+              <small>Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 5 MB)</small>
+            `;
+          } else if (isBonafide) {
+            uploadText.innerHTML = `
+              <i class="ri-upload-cloud-2-line" style="font-size: 2rem; color: var(--primary-color);"></i><br>
+              Click to upload bonafide certificate<br>
+              <small>Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 5 MB)</small>
+            `;
+          } else {
+            // Faculty form payment proof
+            uploadText.innerHTML = `
+              <i class="ri-upload-cloud-line" style="font-size: 2rem; color: var(--primary-color);"></i><br>
+              Choose payment proof file<br>
+              <small>Upload 1 supported file: PDF, document or image. Max 10 MB.</small>
+            `;
+          }
+        });
+
+        // Remove any error styling and messages
+        const errorElements = form.querySelectorAll(
+          ".error-message-payment, .error-message-bonafide, .error-message-faculty-payment"
+        );
+        errorElements.forEach((el) => el.remove());
+
+        const errorContainers = form.querySelectorAll(
+          ".form-control.error, .file-upload.error"
+        );
+        errorContainers.forEach((el) => el.classList.remove("error"));
+      }
+
+      // File upload handlers with real-time validation
+      document
+        .getElementById("bonafide")
+        .addEventListener("change", function () {
+          updateFileUploadText(this, "bonafide certificate");
+          // Remove error styling and messages when file is selected
+          if (this.files[0]) {
+            this.parentElement.classList.remove("error");
+            const existingError = document.querySelector(
+              ".error-message-bonafide"
+            );
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+        });
+
+      document
+        .getElementById("payment_proof")
+        .addEventListener("change", function () {
+          updateFileUploadText(this, "payment proof");
+          // Remove error styling and messages when file is selected
+          if (this.files[0]) {
+            this.parentElement.classList.remove("error");
+            const existingError = document.querySelector(
+              ".error-message-payment"
+            );
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+        });
+
+      // Faculty file upload handler
+      document
+        .getElementById("faculty_payment_proof")
+        .addEventListener("change", function () {
+          updateFileUploadText(this, "payment proof");
+          // Remove error styling and messages when file is selected
+          if (this.files[0]) {
+            this.parentElement.classList.remove("error");
+            const existingError = document.querySelector(
+              ".error-message-faculty-payment"
+            );
+            if (existingError) {
+              existingError.remove();
+            }
+          }
+        });
+
+      function cancelFacultyForm() {
+        if (
+          confirm(
+            "Are you sure you want to cancel? All entered data will be lost."
+          )
+        ) {
+          showError("Form submission cancelled.");
+          const form = document.getElementById("facultyRegistrationForm");
+          form.reset();
+          clearFileUploadDisplays("facultyRegistrationForm");
+        }
+      }
+
+      function updateFileUploadText(input, type) {
+        const fileName = input.files[0]?.name;
+        const uploadText =
+          input.parentElement.querySelector(".file-upload-text");
+
+        if (fileName) {
+          uploadText.innerHTML = `
+                    <i class="ri-file-line" style="font-size: 2rem; color: var(--success-color);"></i><br>
+                    ${fileName}<br>
+                    <small>File selected successfully</small>
+                `;
+        }
+      }
+
+      // Auto-uppercase for full name
+      document
+        .getElementById("fullName")
+        .addEventListener("input", function () {
+          this.value = this.value.toUpperCase();
+        });
+
+      // Restrict cadaveric workshop selection logic
+      document
+        .querySelectorAll('input[name="day1_workshop"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.value.includes("CADAVERIC WORKSHOP (2 days)")) {
+              // Disable day 2 workshops except "None"
+              document
+                .querySelectorAll('input[name="day2_workshop"]')
+                .forEach((day2Radio) => {
+                  if (day2Radio.value !== "None") {
+                    day2Radio.disabled = true;
+                    day2Radio.checked = false;
+                  }
+                });
+              document.querySelector(
+                'input[name="day2_workshop"][value="None"]'
+              ).checked = true;
+            } else {
+              // Enable all day 2 workshops
+              document
+                .querySelectorAll('input[name="day2_workshop"]')
+                .forEach((day2Radio) => {
+                  day2Radio.disabled = false;
+                });
+            }
+          });
+        });
+
+      // Price calculation functions
+      function calculateStudentTotal() {
+        // Only calculate if student tab is active
+        const studentTab = document.getElementById("student-tab");
+        if (!studentTab || !studentTab.classList.contains("active")) {
+          return;
+        }
+
+        let total = 0;
+
+        // Conference fee
+        const conferenceFee = document.querySelector(
+          'input[name="conference_fee"]:checked'
+        );
+        if (conferenceFee) {
+          const feeText = conferenceFee.value;
+          if (feeText.includes("₹7000")) total += 7000;
+          else if (feeText.includes("₹6000")) total += 6000;
+          else if (feeText.includes("₹3000")) total += 3000;
+          else if (feeText.includes("₹2000")) total += 2000;
+        }
+
+        // Day 1 workshop
+        const day1Workshop = document.querySelector(
+          'input[name="day1_workshop"]:checked'
+        );
+        if (day1Workshop) {
+          const workshopText = day1Workshop.value;
+          if (workshopText.includes("₹6000")) total += 6000;
+          else if (workshopText.includes("₹3000")) total += 3000;
+        }
+
+        // Day 2 workshop
+        const day2Workshop = document.querySelector(
+          'input[name="day2_workshop"]:checked'
+        );
+        if (day2Workshop) {
+          const workshopText = day2Workshop.value;
+          if (workshopText.includes("₹6000")) total += 6000;
+          else if (workshopText.includes("₹3000")) total += 3000;
+          else if (workshopText.includes("₹800")) total += 800;
+        }
+
+        // Masterclass
+        const masterclass = document.querySelector(
+          'input[name="masterclass"]:checked'
+        );
+        if (masterclass) {
+          const masterclassText = masterclass.value;
+          if (masterclassText.includes("₹5000")) total += 5000;
+          else if (masterclassText.includes("₹800")) total += 800;
+        }
+
+        // Update display
+        const totalElement = document.getElementById("total-amount");
+        const priceDisplay = document.getElementById("price-display");
+
+        if (total > 0) {
+          totalElement.textContent = "₹" + total.toLocaleString();
+          priceDisplay.style.display = "block";
+        } else {
+          priceDisplay.style.display = "none";
+        }
+      }
+
+      function calculateFacultyTotal() {
+        // Only calculate if faculty tab is active
+        const facultyTab = document.getElementById("faculty-tab");
+        if (!facultyTab || !facultyTab.classList.contains("active")) {
+          return;
+        }
+
+        let total = 0; // Start from 0, not 15000
+
+        // Conference fee
+        const conferenceFee = document.querySelector(
+          'input[name="conference_fee"]:checked'
+        );
+        if (conferenceFee) {
+          const feeText = conferenceFee.value;
+          if (feeText.includes("₹ 7000")) total += 7000;
+        }
+
+        // Accompanying persons
+        const accompanyingPersons = document.getElementById(
+          "faculty_accompanying_persons"
+        );
+        if (accompanyingPersons && accompanyingPersons.value) {
+          total += parseInt(accompanyingPersons.value) * 5000;
+        }
+
+        // Update display
+        const totalElement = document.getElementById("faculty-total-amount");
+        const priceDisplay = document.getElementById("faculty-price-display");
+
+        if (total > 0) {
+          totalElement.textContent = "₹" + total.toLocaleString();
+          priceDisplay.style.display = "block";
+        } else {
+          priceDisplay.style.display = "none";
+        }
+      }
+
+      function hidePriceDisplays() {
+        document.getElementById("price-display").style.display = "none";
+        document.getElementById("faculty-price-display").style.display = "none";
+      }
+
+      // Add event listeners for price calculation
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hide all price displays initially
+        hidePriceDisplays();
+
+        // Student form price calculation
+        document
+          .querySelectorAll(
+            'input[name="conference_fee"], input[name="day1_workshop"], input[name="day2_workshop"], input[name="masterclass"]'
+          )
+          .forEach((input) => {
+            input.addEventListener("change", calculateStudentTotal);
+          });
+
+        // Faculty form price calculation
+        const accompanyingInput = document.getElementById(
+          "faculty_accompanying_persons"
+        );
+        if (accompanyingInput) {
+          accompanyingInput.addEventListener("input", calculateFacultyTotal);
+        }
+
+        // Faculty conference fee calculation (all conference_fee radios work for both forms)
+        document
+          .querySelectorAll('input[name="conference_fee"]')
+          .forEach((input) => {
+            input.addEventListener("change", function () {
+              // Check which tab is active and calculate accordingly
+              const studentTab = document.getElementById("student-tab");
+              const facultyTab = document.getElementById("faculty-tab");
+
+              if (studentTab && studentTab.classList.contains("active")) {
+                calculateStudentTotal();
+              } else if (
+                facultyTab &&
+                facultyTab.classList.contains("active")
+              ) {
+                calculateFacultyTotal();
+              }
+            });
+          });
+
+        // Calculate for the initially active tab (student)
+        calculateStudentTotal();
+      });
+    </script>
+
+    <!-- To Top Button -->
+    <button class="to-top-btn" id="toTopBtn" title="Back to top">
+      <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- To Top Button JavaScript -->
+    <script>
+      // To Top Button Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        // Show/hide button based on scroll position
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            toTopBtn.classList.add("show");
+          } else {
+            toTopBtn.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top when clicked
+        toTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+
+    <!-- Custom JS for floating help icon -->
+    <script src="./assets/js/custom.js"></script>
+  </body>
+</html>

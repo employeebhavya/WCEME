@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WCEME - 2025</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/prettyphoto/css/prettyPhoto.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/countdown/jquery.countdown.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --primary-color: #f67330;
+        --primary-dark: #e55d1a;
+        --secondary-color: #6b7280;
+        --accent-blue: #f67330;
+        --accent-green: #f67330;
+        --accent-purple: #f67330;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-light: #f8fafc;
+        --bg-dark: #1e293b;
+        --white: #ffffff;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        --border-radius: 16px;
+        --border-radius-lg: 24px;
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        --gradient-1: linear-gradient(135deg, #f67330 0%, #ff8a50 100%);
+        --gradient-2: linear-gradient(135deg, #f67330 0%, #ff8a50 100%);
+        --gradient-3: linear-gradient(135deg, #f67330 0%, #ff8a50 100%);
+      }
+      /* Navigation Tabs */
+      .nav-tabs {
+        background: var(--white);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 40px;
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+      }
+
+      .tab-buttons {
+        display: flex;
+        background: var(--bg-light);
+        padding: 8px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tab-button {
+        flex: 1;
+        min-width: 200px;
+        padding: 16px 24px;
+        background: transparent;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-light);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        position: relative;
+      }
+
+      .tab-button.active {
+        background: var(--white);
+        color: var(--primary-color);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .tab-button:hover:not(.active) {
+        background: rgba(246, 115, 48, 0.1);
+        color: var(--primary-color);
+      }
+
+      .tab-button i {
+        font-size: 20px;
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Enhanced Masterclass Cards */
+      .masterclass-hero {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: 48px;
+        margin-bottom: 40px;
+        box-shadow: var(--shadow-xl);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .masterclass-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: var(--gradient-1);
+      }
+
+      .abg-hero::before {
+        background: var(--gradient-1);
+      }
+      .ecg-hero::before {
+        background: var(--gradient-2);
+      }
+      .neuro-hero::before {
+        background: var(--gradient-3);
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2rem, 3vw, 4rem);
+        font-weight: 600;
+        margin-bottom: 16px;
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .ecg-hero .hero-text h1 {
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .neuro-hero .hero-text h1 {
+        background: var(--gradient-3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .hero-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: var(--bg-light);
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+
+      .hero-badge i {
+        color: var(--primary-color);
+      }
+
+      .ecg-hero .hero-badge i {
+        color: var(--accent-blue);
+      }
+      .neuro-hero .hero-badge i {
+        color: var(--accent-purple);
+      }
+
+      .hero-description {
+        font-size: 18px;
+        color: var(--text-light);
+        line-height: 1.7;
+      }
+
+      /* Professor Card Enhancement */
+      .professor-card-enhanced {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border-left: 6px solid var(--primary-color);
+        transition: var(--transition);
+      }
+
+      .ecg-hero .professor-card-enhanced {
+        border-left-color: var(--accent-blue);
+      }
+      .neuro-hero .professor-card-enhanced {
+        border-left-color: var(--accent-purple);
+      }
+
+      .professor-card-enhanced:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .professor-avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: var(--gradient-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 48px;
+        box-shadow: var(--shadow-lg);
+        flex-shrink: 0;
+        position: relative;
+      }
+      .professor-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .ecg-hero .professor-avatar {
+        background: var(--gradient-2);
+      }
+      .neuro-hero .professor-avatar {
+        background: var(--gradient-3);
+      }
+
+      .professor-details h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+      }
+
+      .professor-details p {
+        color: var(--text-light);
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      .professor-details .institution {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .ecg-hero .professor-details .institution {
+        color: var(--accent-blue);
+      }
+      .neuro-hero .professor-details .institution {
+        color: var(--accent-purple);
+      }
+
+      /* Enhanced Schedule */
+      .schedule-container {
+        display: grid;
+        gap: 32px;
+      }
+
+      .time-block-enhanced {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+      }
+
+      .time-block-enhanced:hover {
+        box-shadow: var(--shadow-xl);
+      }
+
+      .time-header-enhanced {
+        background: var(--gradient-1);
+        color: #fff;
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+      }
+
+      .ecg-hero .time-header-enhanced {
+        background: var(--gradient-2);
+      }
+      .neuro-hero .time-header-enhanced {
+        background: var(--gradient-3);
+      }
+
+      .time-header-enhanced::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .time-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        backdrop-filter: blur(10px);
+      }
+
+      .time-info h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .time-info p {
+        font-size: 16px;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      .sessions-grid-enhanced {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+      }
+
+      .session-card-enhanced {
+        background: var(--bg-light);
+        border-radius: var(--border-radius);
+        padding: 28px;
+        transition: var(--transition);
+        position: relative;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      .session-card-enhanced:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-color);
+        background: var(--white);
+      }
+
+      .ecg-hero .session-card-enhanced:hover {
+        border-color: var(--accent-blue);
+      }
+      .neuro-hero .session-card-enhanced:hover {
+        border-color: var(--accent-purple);
+      }
+
+      .session-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .session-icon-enhanced {
+        width: 48px;
+        height: 48px;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .ecg-hero .session-icon-enhanced {
+        background: var(--accent-blue);
+      }
+      .neuro-hero .session-icon-enhanced {
+        background: var(--accent-purple);
+      }
+
+      .session-card-enhanced h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.4;
+        margin-bottom: 12px;
+        margin-top: 0;
+      }
+
+      .session-card-enhanced p {
+        color: var(--text-light);
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+
+      /* Floating Action Button */
+      .fab {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 64px;
+        height: 64px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 24px;
+        box-shadow: var(--shadow-xl);
+        cursor: pointer;
+        transition: var(--transition);
+        z-index: 1000;
+      }
+
+      .fab:hover {
+        transform: scale(1.1);
+        box-shadow: 0 25px 50px -12px rgba(246, 115, 48, 0.5);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .professor-card-enhanced {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .sessions-grid-enhanced {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+
+        .tab-buttons {
+          flex-direction: column;
+        }
+
+        .tab-button {
+          min-width: unset;
+        }
+
+        .masterclass-hero {
+          padding: 32px 24px;
+        }
+
+        .time-header-enhanced {
+          padding: 20px 24px;
+          flex-direction: column;
+          text-align: center;
+          gap: 12px;
+        }
+
+        .sessions-grid-enhanced {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .professor-avatar {
+          width: 100px;
+          height: 100px;
+          font-size: 40px;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-pulse {
+        animation: pulse 2s infinite;
+      }
+
+      /* Loading skeleton */
+      .skeleton {
+        background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e0e0e0 50%,
+          #f0f0f0 75%
+        );
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-dark: #f8fafc;
+          --text-light: #cbd5e1;
+          --bg-light: #334155;
+          --white: #1e293b;
+        }
+      }
+    </style>
+  </head>
+  <body id="home" class="wide body-light workshop-page">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Wrap all content -->
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header fixed">
+        <div class="container">
+          <div class="header-wrapper clearfix">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="#home" class="scroll-to" id="menu-toggle">
+                <span>
+                  <i class="ri-menu-2-line"></i>
+                </span>
+                MENU
+              </a>
+            </div>
+            <div class="logo-container-wceme">
+              <img src="./assets/img/logo/2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /HEADER -->
+
+      <!-- SLIDING MENU -->
+      <div id="sliding-menu" class="sliding-menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-logo">
+              <img src="./assets/img/logo/1.png" alt="WCEME 2025" />
+            </div>
+            <button class="menu-close" id="menu-close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <nav class="menu-nav">
+            <ul class="menu-list">
+              <li class="menu-item" data-delay="100">
+                <a href="./index.html" class="menu-link">
+                  <i class="ri-home-line"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="200">
+                <a href="./workshops.html" class="menu-link">
+                  <i class="ri-tools-line"></i>
+                  <span>Workshops</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="300">
+                <a href="./pathways.html" class="menu-link">
+                  <i class="ri-route-line"></i>
+                  <span>Pathways</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="400">
+                <a href="./fdp.html" class="menu-link">
+                  <i class="ri-graduation-cap-line"></i>
+                  <span>Faculty Development Programme</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="500">
+                <a href="./abstract-submission.html" class="menu-link">
+                  <i class="ri-file-text-line"></i>
+                  <span>Submit Abstract</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="600">
+                <a
+                  href="./paper-and-poster-presentations.html"
+                  class="menu-link"
+                >
+                  <i class="ri-presentation-line"></i>
+                  <span>Paper & Poster Presentations </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="700">
+                <a href="./about-us.html" class="menu-link">
+                  <i class="ri-information-line"></i>
+                  <span>About Us </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="800">
+                <a href="./assets/img/organizingcommitee.pdf" class="menu-link">
+                  <i class="ri-team-line"></i>
+                  <span>Organizing Committee</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-footer">
+            <p class="menu-footer-text">WCEME 2025</p>
+            <p class="menu-footer-subtext">September 25-28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- /SLIDING MENU -->
+
+      <!-- Content area -->
+      <div class="content-area">
+        <div id="main">
+          <!-- page header -->
+          <section id="page-header-sec" class="modern-page-header">
+            <div class="decorative-element circle1"></div>
+            <div class="decorative-element circle2"></div>
+            <div class="decorative-element triangle"></div>
+            <div class="container">
+              <div class="header-content">
+                <div class="header-badge">
+                  <span class="badge-text">WCEME 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /page header -->
+        </div>
+
+        <!-- PAGE SCHEDULE -->
+        <section class="page-masterclass-sections">
+          <div class="container">
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs" role="tablist">
+              <div class="tab-buttons">
+                <button
+                  class="tab-button active"
+                  data-tab="abg"
+                  role="tab"
+                  aria-selected="true"
+                >
+                  <i class="ri-lungs-line"></i>
+                  <span>ABG Masterclass</span>
+                </button>
+                <button
+                  class="tab-button"
+                  data-tab="ecg"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <i class="ri-heart-pulse-line"></i>
+                  <span>ECG Masterclass</span>
+                </button>
+                <button
+                  class="tab-button"
+                  data-tab="neuro"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <i class="ri-brain-line"></i>
+                  <span>Neurological Emergencies</span>
+                </button>
+              </div>
+            </nav>
+
+            <!-- ABG Masterclass Tab -->
+            <div class="tab-content active" id="abg-tab" role="tabpanel">
+              <section class="masterclass-hero abg-hero">
+                <div class="hero-content">
+                  <div class="hero-text">
+                    <h1>ABG Masterclass</h1>
+                    <div class="hero-badges">
+                      <div class="hero-badge">
+                        <i class="ri-calendar-line"></i>
+                        <span>28.09.2024</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Hall G</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-group-line"></i>
+                        <span
+                          >All specialties, medical officers, and undergraduate
+                          students</span
+                        >
+                      </div>
+                    </div>
+                    <p class="hero-description">
+                      Join for a high-impact ABG (Arterial Blood Gas)
+                      Masterclass led by Prof. Sangeeta Sahoo, Emergency
+                      Medicine, AIIMS Bhubaneswar. Gain practical, real-world
+                      skills to confidently interpret ABGs across various
+                      clinical scenarios through intensive discussion from
+                      experts. An unmissable opportunity to learn from the
+                      foremost voices.
+                    </p>
+                  </div>
+                  <div class="professor-card-enhanced">
+                    <div class="professor-avatar animate-pulse">
+                      <img
+                        src="./assets/img/Sangeeta-Sahoo-2.jpg"
+                        alt="sangeeta"
+                      />
+                    </div>
+                    <div class="professor-details">
+                      <h3>Prof. Sangeeta Sahoo</h3>
+                      <p>Emergency Medicine</p>
+                      <p class="institution">AIIMS Bhubaneswar</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div class="schedule-container">
+                <!-- ABG Time Block 1 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-time-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>1:30 PM - 3:00 PM</h3>
+                      <p>It's time for Basics</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-scales-3-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Balancing Act: Making Sense of Acid-Base Homeostasis
+                          </h4>
+                          <p>
+                            Dive into how acid-base balance works and why it
+                            matters for your patients.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-archive-line"></i>
+                        </div>
+                        <div>
+                          <h4>ABGs Unboxed: The Essentials You Need to Know</h4>
+                          <p>
+                            Get the lowdown on Arterial Blood Gas (ABG) analysis
+                            and why it's a game-changer for patient care
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-search-eye-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            ABG in Action: Spotting Respiratory vs. Metabolic
+                            Issues
+                          </h4>
+                          <p>
+                            Master the art of telling apart respiratory and
+                            metabolic imbalances with ABG data
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-lungs-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Riding the Wave of Acute Respiratory Distress: ABG's
+                            Role
+                          </h4>
+                          <p>
+                            Discover how quick ABG analysis can guide your
+                            response to respiratory emergencies
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- ABG Time Block 2 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-graduation-cap-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>3:30 PM - 4:30 PM</h3>
+                      <p>Advanced Topics</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-heart-pulse-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Compensated or Uncompensated? Advanced ABG Insights
+                          </h4>
+                          <p>
+                            Get to know the ins and outs of compensation in
+                            acid-base conditions that can save lives.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-team-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            ABG Bootcamp: Tackling Tough Cases in groups with
+                            Confidence
+                          </h4>
+                          <p>
+                            Strategies for cracking the code on ABGs in complex
+                            patients with multiple health issues.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-play-circle-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Sim Scenarios: ABG Interpretation in Real Time
+                          </h4>
+                          <p>
+                            Engage in hands-on simulations to level up your ABG
+                            reading game in realistic settings.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ECG Masterclass Tab -->
+            <div class="tab-content" id="ecg-tab" role="tabpanel">
+              <section class="masterclass-hero ecg-hero">
+                <div class="hero-content">
+                  <div class="hero-text">
+                    <h1>ECG Masterclass</h1>
+                    <div class="hero-badges">
+                      <div class="hero-badge">
+                        <i class="ri-calendar-line"></i>
+                        <span>28.09.2024</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Hall F</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-group-line"></i>
+                        <span
+                          >All specialties, medical officers, and undergraduate
+                          students</span
+                        >
+                      </div>
+                    </div>
+                    <p class="hero-description">
+                      Join for a high-impact ECG Masterclass led by Prof. Nayer
+                      Jamshed, Emergency Medicine, AIIMS, New Delhi. Gain
+                      practical, real-world skills to confidently interpret ECGs
+                      across various clinical scenarios through intensive
+                      discussion from experts. An unmissable opportunity to
+                      learn from the foremost voices.
+                    </p>
+                  </div>
+                  <div class="professor-card-enhanced">
+                    <div class="professor-avatar animate-pulse">
+                      <img
+                        src="./assets/img/Prof-Nayer-Jamshed.png"
+                        alt="nayer"
+                      />
+                    </div>
+                    <div class="professor-details">
+                      <h3>Prof. Nayer Jamshed</h3>
+                      <p>Emergency Medicine</p>
+                      <p class="institution">AIIMS, New Delhi</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div class="schedule-container">
+                <!-- ECG Time Block 1 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-book-open-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>8:30 AM - 9:15 AM</h3>
+                      <p>Basics Made Easy</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-pulse-line"></i>
+                        </div>
+                        <div>
+                          <h4>ECG 101: Decoding the Heart's Signals</h4>
+                          <p>
+                            A simple breakdown of how ECG works and what those
+                            squiggly lines really mean.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-eye-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Spotting the Difference: Normal vs. Wow, That's
+                            Unusual!
+                          </h4>
+                          <p>
+                            Hands-on tips for recognizing normal heart rhythms
+                            versus common issues.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-crosshair-line"></i>
+                        </div>
+                        <div>
+                          <h4>Get It Right: Lead Placement Like a Pro</h4>
+                          <p>
+                            Mastering how to stick those leads on for the best
+                            readings—no more confusion!
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- ECG Time Block 2 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-settings-3-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>9:30 AM - 10:30 AM</h3>
+                      <p>Real-World Applications</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-heart-add-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            ECG and Heart Attacks: Speedy Diagnosis in Action
+                          </h4>
+                          <p>
+                            How to quickly spot a heart attack using ECG and
+                            save lives.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-rhythm-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Arrhythmias Unplugged: Understanding Heart Rhythms
+                          </h4>
+                          <p>
+                            Dive into the different types of heartbeats, what
+                            causes them, and what to do about it.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-health-book-line"></i>
+                        </div>
+                        <div>
+                          <h4>Reading ECG in Heart Failure: Troubleshooting</h4>
+                          <p>
+                            Learning how ECG helps in managing heart failure and
+                            what to look for.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- ECG Time Block 3 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-hand-heart-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>11:00 AM - 12:30 PM</h3>
+                      <p>Interactive Learning</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-gamepad-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            ECG Simulation: Hands-On Practice in Real Time
+                          </h4>
+                          <p>
+                            Interactive sessions where you read and interpret
+                            ECGs as if you were in the ER.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-file-text-line"></i>
+                        </div>
+                        <div>
+                          <h4>Case Studies: Real-Life ECG Dilemmas</h4>
+                          <p>
+                            Break down actual ECGs from patients to learn how to
+                            handle various scenarios.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- ECG Time Block 4 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>12:30 PM - 1:30 PM</h3>
+                      <p>Extras</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-error-warning-line"></i>
+                        </div>
+                        <div>
+                          <h4>ECG Artifacts: What's Real and What's Not?</h4>
+                          <p>
+                            Learn how to spot and fix common errors that can
+                            mess up your readings.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-scales-line"></i>
+                        </div>
+                        <div>
+                          <h4>ECG Interpretation: Know Your Legal Stuff</h4>
+                          <p>
+                            What you need to know about the ethical and legal
+                            responsibilities tied to ECG results.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-rocket-line"></i>
+                        </div>
+                        <div>
+                          <h4>Future of ECG Tech: What's on the Horizon?</h4>
+                          <p>
+                            A look at cutting-edge ECG tech, from wearables to
+                            remote monitoring—what's next?
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neurological Emergencies Tab -->
+            <div class="tab-content" id="neuro-tab" role="tabpanel">
+              <section class="masterclass-hero neuro-hero">
+                <div class="hero-content">
+                  <div class="hero-text">
+                    <h1>Neurological Emergencies Masterclass</h1>
+                    <div class="hero-badges">
+                      <div class="hero-badge">
+                        <i class="ri-calendar-line"></i>
+                        <span>28.09.2024</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Hall I</span>
+                      </div>
+                      <div class="hero-badge">
+                        <i class="ri-group-line"></i>
+                        <span
+                          >All specialties, medical officers, and undergraduate
+                          students</span
+                        >
+                      </div>
+                    </div>
+                    <p class="hero-description">
+                      Join for a high-impact Neurological Emergencies
+                      Masterclass led by Prof Nidhi Kaeley, Emergency Medicine,
+                      AIIMS Rishikesh. Gain practical, real-world skills to
+                      confidently handle neurological emergencies across various
+                      clinical scenarios through intensive discussion from
+                      experts. An unmissable opportunity to learn from the
+                      foremost voices.
+                    </p>
+                  </div>
+                  <div class="professor-card-enhanced">
+                    <div class="professor-avatar animate-pulse">
+                      <i class="ri-user-3-line"></i>
+                    </div>
+                    <div class="professor-details">
+                      <h3>Prof. Nidhi Kaeley</h3>
+                      <p>Emergency Medicine</p>
+                      <p class="institution">AIIMS Rishikesh</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div class="schedule-container">
+                <!-- Neuro Time Block 1 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-brain-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>8:30 AM - 9:00 AM</h3>
+                      <p>Fundas of Brain</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-lightbulb-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Neuro Emergencies 101: The Latest and Greatest
+                          </h4>
+                          <p>
+                            Dive into the cutting-edge advancements and
+                            protocols transforming how we tackle neurological
+                            emergencies today.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-shield-cross-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Brain First: Protecting Our Most Vital Organ in
+                            Emergencies
+                          </h4>
+                          <p>
+                            Let's chat about innovative ways to safeguard brain
+                            health when time is of the essence.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 2 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-flashlight-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>9:00 AM - 9:30 AM</h3>
+                      <p>Stroke Management</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-alarm-warning-line"></i>
+                        </div>
+                        <div>
+                          <h4>Stroke SOS: Fast-Tracking Acute Care</h4>
+                          <p>
+                            Get the scoop on how to quickly assess and treat
+                            ischemic and hemorrhagic strokes like a pro.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-surgical-mask-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Thrombectomy Update: Expanding the Rescue Window
+                          </h4>
+                          <p>
+                            Join us as we break down the latest guidelines for
+                            thrombectomy and why it's a game-changer for stroke
+                            patients.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 3 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-skull-2-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>9:30 AM - 10:15 AM</h3>
+                      <p>Traumatic Brain Injury (TBI)</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-roadster-line"></i>
+                        </div>
+                        <div>
+                          <h4>TBI Breakdown: Navigating the Emergency Maze</h4>
+                          <p>
+                            An engaging look at TBI types, assessments, and the
+                            lifesaving treatments available in the heat of the
+                            moment.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-gauge-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Managing Intracranial Pressure: Tips and Tools
+                          </h4>
+                          <p>
+                            Discover practical strategies for monitoring and
+                            controlling elevated intracranial pressure in
+                            emergency situations.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-search-2-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            TBI Complications: Spotting and Slaying Them Early
+                          </h4>
+                          <p>
+                            Learn how to recognize and tackle common
+                            complications that can arise after a TBI.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 4 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-thunderstorms-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>10:30 AM - 11:00 AM</h3>
+                      <p>Seizures and Status Epilepticus</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-book-mark-line"></i>
+                        </div>
+                        <div>
+                          <h4>Status Epilepticus: Your Emergency Playbook</h4>
+                          <p>
+                            Quick guide on diagnosing and jumping into action
+                            for status epilepticus in the ER.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-timer-flash-line"></i>
+                        </div>
+                        <div>
+                          <h4>Seizures in the ER: A Rapid Response Approach</h4>
+                          <p>
+                            Get hands-on tips for managing seizures effectively
+                            when every second counts.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 5 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-virus-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>11:00 AM - 11:30 AM</h3>
+                      <p>Neurological Infections</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-alert-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Meningitis Alert! Quick Diagnosis and Treatment
+                            Tactics
+                          </h4>
+                          <p>
+                            Learn to recognize the signs of acute meningitis and
+                            why immediate action is key.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-fire-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Encephalitis Essentials: Quickly Spotting and
+                            Managing the Crisis
+                          </h4>
+                          <p>
+                            A practical guide on diagnosing and treating
+                            encephalitis in emergency cases.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 6 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-camera-lens-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>11:30 AM - 12:10 PM</h3>
+                      <p>Advanced Diagnostics and Imaging</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-scan-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Neuroimaging 2.0: What You Really Need in
+                            Emergencies
+                          </h4>
+                          <p>
+                            Discover how to use CT, MRI, and the latest imaging
+                            tech to tackle neurological emergencies smarter and
+                            faster.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-sound-module-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            POCUS Power: Using Ultrasound for Quick Neuro Checks
+                          </h4>
+                          <p>
+                            Explore how point-of-care ultrasound can be your
+                            secret weapon for rapid diagnosis.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Neuro Time Block 7 -->
+                <div class="time-block-enhanced">
+                  <div class="time-header-enhanced">
+                    <div class="time-icon">
+                      <i class="ri-discuss-line"></i>
+                    </div>
+                    <div class="time-info">
+                      <h3>12:15 PM - 1:30 PM</h3>
+                      <p>The Reality Touch UP</p>
+                    </div>
+                  </div>
+                  <div class="sessions-grid-enhanced">
+                    <article class="session-card-enhanced">
+                      <div class="session-header">
+                        <div class="session-icon-enhanced">
+                          <i class="ri-chat-4-line"></i>
+                        </div>
+                        <div>
+                          <h4>
+                            Real Talk: Lessons from Real Neurological Emergency
+                            Cases
+                          </h4>
+                          <p>
+                            Interactive discussions on actual cases, featuring
+                            challenges and triumphs in the world of emergency
+                            neurology.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /PAGE SCHEDULE -->
+      </div>
+      <!-- /Content area -->
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-meta">
+          <div class="container text-center">
+            <div class="clearfix">
+              <ul class="social-line list-inline">
+                <li data-animation="flipInY" data-animation-delay="100">
+                  <a
+                    href="https://twitter.com/avmch3"
+                    target="_blank"
+                    class="social-icon twitter"
+                    ><i class="ri-twitter-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="200">
+                  <a
+                    href="https://www.linkedin.com/company/avmch"
+                    target="_blank"
+                    class="social-icon linkedin"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="300">
+                  <a
+                    href="https://www.facebook.com/aarupadaiveedumedicalcollege/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    ><i class="ri-facebook-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="400">
+                  <a
+                    href="https://www.youtube.com/channel/UCCIX3YXBdgtWURgGS48UR4g"
+                    target="_blank"
+                    class="social-icon youtube"
+                    ><i class="ri-youtube-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="500">
+                  <a
+                    href="https://instagram.com/avmch_puducherry?utm_medium=copy_link"
+                    target="_blank"
+                    class="social-icon instagram"
+                    ><i class="ri-instagram-fill"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <span
+              class="copyright"
+              data-animation="fadeInUp"
+              data-animation-delay="100"
+              >&copy; 2025 - Aarupadai Veedu Medical College and Hospital</span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- /FOOTER -->
+
+      <div class="to-top"><i class="fa fa-angle-up"></i></div>
+    </div>
+    <!-- /Wrap all content -->
+
+    <!-- Popup: Register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <button
+          type="button"
+          class="close close-btn"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <section class="popup-register">
+          <h1 class="section-title">
+            <span
+              data-animation="flipInY"
+              data-animation-delay="300"
+              class="icon-inner"
+              ><span class="fa-stack"
+                ><i class="fa rhex fa-stack-2x"></i
+                ><i class="fa fa-ticket fa-stack-1x"></i></span
+            ></span>
+            <span
+              data-animation="fadeInRight"
+              data-animation-delay="500"
+              class="title-inner"
+              >Register now <small> / dont mıss event!</small></span
+            >
+          </h1>
+          <form
+            id="registration-form"
+            name="registration-form"
+            class="registration-form"
+            action="#"
+            method="post"
+          >
+            <iframe
+              src="//eventbrite.com/tickets-external?eid=18432753863&ref=etckt"
+              frameborder="0"
+              height="300px"
+              width="100%"
+              vspace="0"
+              hspace="0"
+              marginheight="5"
+              marginwidth="5"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
+          </form>
+        </section>
+      </div>
+    </div>
+    <!-- /Popup: Register -->
+
+    <!-- JS Global -->
+
+    <!--[if lt IE 9
+      ]><script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script
+    ><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/superfish/js/superfish.js"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/plugins/placeholdem.min.js"></script>
+    <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="assets/plugins/owlcarousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/waypoints/waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!--<script src="assets/js/theme-ajax-mail.js"></script>-->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        theme.init();
+        theme.initMainSlider();
+        theme.initCountDown();
+        theme.initPartnerSlider();
+        theme.initTestimonials();
+        theme.initGoogleMap();
+      });
+      jQuery(window).load(function () {
+        theme.initAnimation();
+      });
+
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy({ offset: 100, target: ".navigation" });
+      });
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+      jQuery(window).resize(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+
+      jQuery(document).ready(function () {
+        theme.onResize();
+      });
+      jQuery(window).load(function () {
+        theme.onResize();
+      });
+      jQuery(window).resize(function () {
+        theme.onResize();
+      });
+
+      jQuery(window).load(function () {
+        if (location.hash != "") {
+          var hash = "#" + window.location.hash.substr(1);
+          if (hash.length) {
+            jQuery("html,body")
+              .delay(0)
+              .animate(
+                {
+                  scrollTop: jQuery(hash).offset().top - 44 + "px",
+                },
+                {
+                  duration: 1200,
+                  easing: "easeInOutExpo",
+                }
+              );
+          }
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tab functionality
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const targetTab = button.dataset.tab;
+
+            // Remove active class from all buttons and contents
+            tabButtons.forEach((btn) => {
+              btn.classList.remove("active");
+              btn.setAttribute("aria-selected", "false");
+            });
+            tabContents.forEach((content) =>
+              content.classList.remove("active")
+            );
+
+            // Add active class to clicked button and corresponding content
+            button.classList.add("active");
+            button.setAttribute("aria-selected", "true");
+            document.getElementById(`${targetTab}-tab`).classList.add("active");
+          });
+        });
+
+        // Enhanced animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -100px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Enhanced hover effects
+        sessionCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-8px) scale(1.02)";
+            this.style.boxShadow = "var(--shadow-xl)";
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+            this.style.boxShadow = "var(--shadow-sm)";
+          });
+
+          // Keyboard accessibility
+          card.setAttribute("tabindex", "0");
+          card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              this.click();
+            }
+          });
+        });
+
+        // FAB functionality
+        const fab = document.querySelector(".fab");
+        let fabMenuOpen = false;
+
+        fab.addEventListener("click", function () {
+          if (!fabMenuOpen) {
+            this.style.transform = "rotate(45deg) scale(1.1)";
+            fabMenuOpen = true;
+          } else {
+            this.style.transform = "rotate(0deg) scale(1)";
+            fabMenuOpen = false;
+          }
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Performance optimization
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+        if (prefersReducedMotion.matches) {
+          document.documentElement.style.setProperty("--transition", "none");
+        }
+
+        // Loading state management
+        setTimeout(() => {
+          document.body.classList.add("loaded");
+        }, 100);
+
+        // Auto-scroll timeline effect
+        const timeBlocks = document.querySelectorAll(".time-block-enhanced");
+        const timeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.querySelector(
+                  ".time-header-enhanced"
+                ).style.transform = "scale(1.02)";
+                setTimeout(() => {
+                  entry.target.querySelector(
+                    ".time-header-enhanced"
+                  ).style.transform = "scale(1)";
+                }, 300);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        timeBlocks.forEach((block) => timeObserver.observe(block));
+      });
+
+      // Touch gestures for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      document.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const currentTab = document.querySelector(".tab-button.active");
+        const allTabs = Array.from(document.querySelectorAll(".tab-button"));
+        const currentIndex = allTabs.indexOf(currentTab);
+
+        if (
+          touchEndX < touchStartX - swipeThreshold &&
+          currentIndex < allTabs.length - 1
+        ) {
+          // Swipe left - next tab
+          allTabs[currentIndex + 1].click();
+        }
+
+        if (touchEndX > touchStartX + swipeThreshold && currentIndex > 0) {
+          // Swipe right - previous tab
+          allTabs[currentIndex - 1].click();
+        }
+      }
+    </script>
+  </body>
+</html>

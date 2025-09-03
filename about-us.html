@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WCEME - 2025</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/prettyphoto/css/prettyPhoto.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/countdown/jquery.countdown.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <style>
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 60px;
+        align-items: start;
+      }
+
+      .about-card {
+        background: #ffffff;
+        border-radius: 25px;
+        padding: 0;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transform: translateY(30px);
+        opacity: 0;
+        height: fit-content;
+      }
+
+      .about-card.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .about-card:nth-child(even) {
+        transform: translateY(30px) rotate(1deg);
+      }
+
+      .about-card:nth-child(even).visible {
+        transform: translateY(0) rotate(1deg);
+      }
+
+      .about-card:nth-child(odd) {
+        transform: translateY(30px) rotate(-1deg);
+      }
+
+      .about-card:nth-child(odd).visible {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      .about-card:hover {
+        transform: translateY(-15px) rotate(0deg) !important;
+        box-shadow: 0 25px 60px rgba(246, 115, 48, 0.15);
+      }
+
+      .card-image {
+        width: 100%;
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(246, 115, 48, 0.1),
+          rgba(246, 115, 48, 0.05)
+        );
+      }
+
+      .card-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #f67330;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(246, 115, 48, 0.3);
+        z-index: 3;
+      }
+
+      .card-icon {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f67330;
+        font-size: 24px;
+        z-index: 3;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-content {
+        padding: 40px;
+      }
+
+      .card-title {
+        font-size: 29px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .card-description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 25px;
+        text-align: justify;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.3s ease;
+      }
+
+      .card-description.collapsed {
+        max-height: 120px;
+        position: relative;
+      }
+
+      .card-description.collapsed::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(transparent, white);
+      }
+
+      .card-description.expanded {
+        max-height: none;
+      }
+
+      .card-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .show-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        color: #f67330;
+        border: none;
+        padding: 0;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-family: inherit;
+        width: auto;
+      }
+
+      .show-more-btn:hover {
+        color: #e55a1c;
+        transform: translateX(3px);
+      }
+
+      .show-more-btn i {
+        transition: transform 0.3s ease;
+        font-size: 16px;
+      }
+
+      .show-more-btn.expanded i {
+        transform: rotate(180deg);
+      }
+
+      .card-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(135deg, #f67330, #e55a1c);
+        color: white;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(246, 115, 48, 0.25);
+        position: relative;
+        overflow: hidden;
+        width: fit-content;
+        z-index: 9;
+      }
+
+      .card-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .card-button:hover::before {
+        left: 100%;
+      }
+
+      .card-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(246, 115, 48, 0.4);
+      }
+
+      .card-button i {
+        transition: transform 0.3s ease;
+      }
+
+      .card-button:hover i {
+        transform: translateX(3px);
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 40px;
+          padding: 60px 15px 30px;
+          margin-bottom: 20px;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .about-card {
+          margin: 0 10px;
+        }
+
+        .about-card:nth-child(even),
+        .about-card:nth-child(odd) {
+          transform: translateY(20px) rotate(0deg);
+        }
+
+        .about-card:nth-child(even).visible,
+        .about-card:nth-child(odd).visible {
+          transform: translateY(0) rotate(0deg);
+        }
+
+        .card-content {
+          padding: 30px;
+        }
+
+        .card-title {
+          font-size: 24px;
+        }
+
+        .card-description {
+          font-size: 15px;
+        }
+
+        .card-description.collapsed {
+          max-height: 100px;
+        }
+
+        .card-image {
+          height: 240px;
+        }
+
+        .card-buttons {
+          align-items: stretch;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page-title {
+          font-size: 32px;
+        }
+
+        .card-content {
+          padding: 25px;
+        }
+
+        .card-title {
+          font-size: 22px;
+        }
+
+        .card-buttons {
+          gap: 12px;
+        }
+
+        .show-more-btn {
+          font-size: 14px;
+        }
+
+        .card-button {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body id="home" class="wide body-light workshop-page">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Wrap all content -->
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header fixed">
+        <div class="container">
+          <div class="header-wrapper clearfix">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="#home" class="scroll-to" id="menu-toggle">
+                <span>
+                  <i class="ri-menu-2-line"></i>
+                </span>
+                MENU
+              </a>
+            </div>
+            <div class="logo-container-wceme">
+              <img src="./assets/img/logo/2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /HEADER -->
+
+      <!-- SLIDING MENU -->
+      <div id="sliding-menu" class="sliding-menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-logo">
+              <img src="./assets/img/logo/1.png" alt="WCEME 2025" />
+            </div>
+            <button class="menu-close" id="menu-close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <nav class="menu-nav">
+            <ul class="menu-list">
+              <li class="menu-item" data-delay="100">
+                <a href="./index.html" class="menu-link">
+                  <i class="ri-home-line"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="200">
+                <a href="./workshops.html" class="menu-link">
+                  <i class="ri-tools-line"></i>
+                  <span>Workshops</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="300">
+                <a href="./pathways.html" class="menu-link">
+                  <i class="ri-route-line"></i>
+                  <span>Pathways</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="400">
+                <a href="./fdp.html" class="menu-link">
+                  <i class="ri-graduation-cap-line"></i>
+                  <span>Faculty Development Programme</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="500">
+                <a href="./abstract-submission.html" class="menu-link">
+                  <i class="ri-file-text-line"></i>
+                  <span>Submit Abstract</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="600">
+                <a
+                  href="./paper-and-poster-presentations.html"
+                  class="menu-link"
+                >
+                  <i class="ri-presentation-line"></i>
+                  <span>Paper & Poster Presentations </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="700">
+                <a href="./about-us.html" class="menu-link">
+                  <i class="ri-information-line"></i>
+                  <span>About Us </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="800">
+                <a href="./assets/img/organizingcommitee.pdf" class="menu-link">
+                  <i class="ri-team-line"></i>
+                  <span>Organizing Committee</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-footer">
+            <p class="menu-footer-text">WCEME 2025</p>
+            <p class="menu-footer-subtext">September 25-28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- /SLIDING MENU -->
+
+      <!-- Content area -->
+      <div class="content-area">
+        <div id="main">
+          <!-- page header -->
+          <section id="page-header-sec" class="modern-page-header">
+            <div class="decorative-element circle1"></div>
+            <div class="decorative-element circle2"></div>
+            <div class="decorative-element triangle"></div>
+            <div class="container">
+              <div class="header-content">
+                <div class="header-badge">
+                  <span class="badge-text">WCEME 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /page header -->
+        </div>
+
+        <!-- PAGE SCHEDULE -->
+        <section class="page-fdp-sections">
+          <div class="container">
+            <div class="about-container">
+              <div class="cards-grid">
+                <!-- The Conference -->
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('./assets/img/Conference.webp');
+                    "
+                  >
+                    <div class="card-icon">
+                      <i class="ri-presentation-line"></i>
+                    </div>
+                    <div class="card-badge">WCEME</div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="card-title">WCEME Conference</h3>
+                    <p class="card-description collapsed">
+                      The World Congress of Emergency Medicine Educators (WCEME)
+                      is a premier international forum dedicated to the
+                      advancement of Emergency Medicine. Bringing together
+                      leading clinicians, academic faculty, experts, and
+                      healthcare administrators from across the globe, this
+                      conference aims to engage in cutting-edge discussions,
+                      hands-on workshops, and breakthrough research shaping the
+                      future of emergency care. This conference is organised by
+                      the Department of Emergency Medicine, Aarupadai Veedu
+                      Medical College, Vinayaka Mission's Puducherry Campus in
+                      collaboration with the Association of Emergency Medicine
+                      Educators. The theme is "Learning by Doing: Advancing
+                      Hands-On Training in Emergency Medicine".
+                    </p>
+                    <div class="card-buttons">
+                      <button class="show-more-btn">
+                        <span>Show More</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Department of Emergency Medicine -->
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('./assets/img/emergencymedicine.webp');
+                    "
+                  >
+                    <div class="card-icon">
+                      <i class="ri-heart-pulse-line"></i>
+                    </div>
+                    <div class="card-badge">EM</div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="card-title">
+                      The Department of Emergency Medicine
+                    </h3>
+                    <p class="card-description collapsed">
+                      Aarupadai Medical College and Hospital is proud to
+                      showcase its Emergency Medical Services (EMS), which
+                      stands as a benchmark in patient-centered emergency care
+                      and disaster management. Our EMS team plays a critical
+                      role across all phases of emergency response—preparedness,
+                      intervention, and recovery. The fully-equipped emergency
+                      department handles a wide spectrum of cases, including
+                      trauma, poisoning, cardiac events, burns, strokes, and
+                      pediatric emergencies, supported by a dedicated ICU
+                      managed by experienced emergency physicians available
+                      24/7. With over a decade of expertise, our faculty lead
+                      cutting-edge clinical care, education, and disaster
+                      preparedness training. We offer diagnostics—including CT,
+                      MRI, USG, and FAST scans—and operate ACLS ambulances
+                      outfitted with advanced life-saving equipment, providing
+                      free transport and first aid for underprivileged patients.
+                      As an institution committed to excellence, we conduct
+                      continuous training in BLS/ACLS (per AHA standards), mass
+                      casualty simulations, and protocol evaluations to align
+                      with international best practices. Aarupadai's EMS
+                      represents a model of clinical leadership, innovation, and
+                      compassionate care in emergency medicine.
+                    </p>
+                    <div class="card-buttons">
+                      <button class="show-more-btn">
+                        <span>Show More</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                      </button>
+                      <a
+                        href="https://avmc.edu.in/hospital-services/emergency-medicine/"
+                        target="_blank"
+                        class="card-button"
+                      >
+                        <i class="ri-global-line"></i> To know more visit the
+                        website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Association of Emergency Medicine Educators -->
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('./assets/img/emergencymedicineeducators.webp');
+                    "
+                  >
+                    <div class="card-icon">
+                      <i class="ri-user-star-line"></i>
+                    </div>
+                    <div class="card-badge">AEME</div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="card-title">
+                      The Association of Emergency Medicine Educators
+                    </h3>
+                    <p class="card-description collapsed">
+                      The Association of Emergency Medicine Educators (AEME
+                      India) is a dynamic organization dedicated to advancing
+                      education, research, and collaboration within the field of
+                      emergency medicine. The association has rapidly become a
+                      prominent force in shaping the training and development of
+                      emergency medicine professionals. The association's
+                      mission is to foster excellence in emergency medicine
+                      education by promoting innovative teaching methodologies,
+                      encouraging research initiatives, and facilitating
+                      networking among educators in the field.
+                    </p>
+                    <div class="card-buttons">
+                      <button class="show-more-btn">
+                        <span>Show More</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                      </button>
+                      <a
+                        href="https://aeme.ind.in/"
+                        target="_blank"
+                        class="card-button"
+                      >
+                        <i class="ri-global-line"></i> To know more visit the
+                        website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Aarupadai Veedu Medical College -->
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+                  <div
+                    class="card-image"
+                    style="background-image: url('./assets/img/avmc.jpg')"
+                  >
+                    <div class="card-icon">
+                      <i class="ri-building-line"></i>
+                    </div>
+                    <div class="card-badge">AVMC</div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="card-title">Aarupadai Veedu Medical College</h3>
+                    <p class="card-description collapsed">
+                      Aarupadai Veedu Medical College & Hospital is a
+                      constituent college of Vinayaka Mission's Research
+                      Foundation (Deemed to be University), established in the
+                      year 2000. It offers a MBBS program, Postgraduate courses,
+                      and PhD programs. In addition, the AVMC campus houses a
+                      nursing college, the School of Allied Health Sciences, the
+                      School of Behavioral and Rehabilitation, and the School of
+                      Physiotherapy. These institutions provide exceptional
+                      opportunities for interdisciplinary learning and research.
+                      AVMC provides comprehensive healthcare services, including
+                      specialized departments and advanced diagnostics. Actively
+                      engaging in community-oriented services, it operates urban
+                      and rural health centers. The campus boasts modern
+                      facilities, including a library, Wi-Fi-enabled areas, an
+                      auditorium, clinical skills labs, and a simulation center.
+                      Research is integral and supported by the Central
+                      Biomedical Research Laboratory, research committees, and
+                      collaborations with national and international
+                      institutions. Accredited by NAAC, NABH, and NABL, the
+                      institution emphasizes environmental sustainability,
+                      covering 33% of the campus with greenery, aligning with
+                      UNESCO's development goals.
+                    </p>
+                    <div class="card-buttons">
+                      <button class="show-more-btn">
+                        <span>Show More</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                      </button>
+                      <a
+                        href="https://avmc.edu.in/"
+                        target="_blank"
+                        class="card-button"
+                      >
+                        <i class="ri-global-line"></i> To know more visit the
+                        website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Vinayaka Mission's Research Foundation -->
+                <div class="about-card" data-aos="fade-up" data-aos-delay="500">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('./assets/img/vmrf-header.webp');
+                    "
+                  >
+                    <div class="card-icon">
+                      <i class="ri-flask-line"></i>
+                    </div>
+                    <div class="card-badge">VMRF</div>
+                  </div>
+                  <div class="card-content">
+                    <h3 class="card-title">
+                      Vinayaka Mission's Research Foundation
+                    </h3>
+                    <p class="card-description collapsed">
+                      VMRF is a pioneering and vibrant Research Foundation
+                      (Deemed to be University) recognized by the Ministry of
+                      Human Resources Development, Government of India, and
+                      endorsed by the University Grants Commission (UGC) under
+                      Section 3 of the UGC Act, 1956. VMRF encompasses an
+                      extensive academic landscape with 13 Colleges and 11
+                      Schools spread across four campuses in Salem and
+                      Chengalpet Districts in Tamil Nadu, as well as Puducherry
+                      and Karaikal of the Union Territory of Puducherry and it
+                      is accredited by the National Assessment and Accreditation
+                      Council (NAAC) with an A grade. With a legacy of over
+                      three decades, VMRF continues its journey, fostering
+                      enlightenment, empowerment, and innovation, shaping minds,
+                      and driving progress within the academic landscape and
+                      beyond.
+                    </p>
+                    <div class="card-buttons">
+                      <button class="show-more-btn">
+                        <span>Show More</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                      </button>
+                      <a
+                        href="https://vmrfdu.edu.in/"
+                        target="_blank"
+                        class="card-button"
+                      >
+                        <i class="ri-global-line"></i> To know more visit the
+                        website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /PAGE SCHEDULE -->
+      </div>
+      <!-- /Content area -->
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-meta">
+          <div class="container text-center">
+            <div class="clearfix">
+              <ul class="social-line list-inline">
+                <li data-animation="flipInY" data-animation-delay="100">
+                  <a
+                    href="https://twitter.com/avmch3"
+                    target="_blank"
+                    class="social-icon twitter"
+                    ><i class="ri-twitter-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="200">
+                  <a
+                    href="https://www.linkedin.com/company/avmch"
+                    target="_blank"
+                    class="social-icon linkedin"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="300">
+                  <a
+                    href="https://www.facebook.com/aarupadaiveedumedicalcollege/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    ><i class="ri-facebook-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="400">
+                  <a
+                    href="https://www.youtube.com/channel/UCCIX3YXBdgtWURgGS48UR4g"
+                    target="_blank"
+                    class="social-icon youtube"
+                    ><i class="ri-youtube-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="500">
+                  <a
+                    href="https://instagram.com/avmch_puducherry?utm_medium=copy_link"
+                    target="_blank"
+                    class="social-icon instagram"
+                    ><i class="ri-instagram-fill"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <span
+              class="copyright"
+              data-animation="fadeInUp"
+              data-animation-delay="100"
+              >&copy; 2025 - Aarupadai Veedu Medical College and Hospital</span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- /FOOTER -->
+
+      <div class="to-top"><i class="fa fa-angle-up"></i></div>
+    </div>
+    <!-- /Wrap all content -->
+
+    <!-- Popup: Register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <button
+          type="button"
+          class="close close-btn"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <section class="popup-register">
+          <h1 class="section-title">
+            <span
+              data-animation="flipInY"
+              data-animation-delay="300"
+              class="icon-inner"
+              ><span class="fa-stack"
+                ><i class="fa rhex fa-stack-2x"></i
+                ><i class="fa fa-ticket fa-stack-1x"></i></span
+            ></span>
+            <span
+              data-animation="fadeInRight"
+              data-animation-delay="500"
+              class="title-inner"
+              >Register now <small> / dont mıss event!</small></span
+            >
+          </h1>
+          <form
+            id="registration-form"
+            name="registration-form"
+            class="registration-form"
+            action="#"
+            method="post"
+          >
+            <iframe
+              src="//eventbrite.com/tickets-external?eid=18432753863&ref=etckt"
+              frameborder="0"
+              height="300px"
+              width="100%"
+              vspace="0"
+              hspace="0"
+              marginheight="5"
+              marginwidth="5"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
+          </form>
+        </section>
+      </div>
+    </div>
+    <!-- /Popup: Register -->
+
+    <!-- JS Global -->
+
+    <!--[if lt IE 9
+      ]><script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script
+    ><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/superfish/js/superfish.js"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/plugins/placeholdem.min.js"></script>
+    <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="assets/plugins/owlcarousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/waypoints/waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!--<script src="assets/js/theme-ajax-mail.js"></script>-->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        theme.init();
+        theme.initMainSlider();
+        theme.initCountDown();
+        theme.initPartnerSlider();
+        theme.initTestimonials();
+        theme.initGoogleMap();
+      });
+      jQuery(window).load(function () {
+        theme.initAnimation();
+      });
+
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy({ offset: 100, target: ".navigation" });
+      });
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+      jQuery(window).resize(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+
+      jQuery(document).ready(function () {
+        theme.onResize();
+      });
+      jQuery(window).load(function () {
+        theme.onResize();
+      });
+      jQuery(window).resize(function () {
+        theme.onResize();
+      });
+
+      jQuery(window).load(function () {
+        if (location.hash != "") {
+          var hash = "#" + window.location.hash.substr(1);
+          if (hash.length) {
+            jQuery("html,body")
+              .delay(0)
+              .animate(
+                {
+                  scrollTop: jQuery(hash).offset().top - 44 + "px",
+                },
+                {
+                  duration: 1200,
+                  easing: "easeInOutExpo",
+                }
+              );
+          }
+        }
+      });
+    </script>
+    <script>
+      // Intersection Observer for card animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px",
+      };
+
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all cards
+      document.querySelectorAll(".about-card").forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
+        cardObserver.observe(card);
+      });
+
+      // Show More/Less functionality
+      document.querySelectorAll(".show-more-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const description = this.parentElement.previousElementSibling;
+          const spanText = this.querySelector("span");
+          const icon = this.querySelector("i");
+
+          if (description.classList.contains("collapsed")) {
+            // Expand
+            description.classList.remove("collapsed");
+            description.classList.add("expanded");
+            spanText.textContent = "Show Less";
+            this.classList.add("expanded");
+          } else {
+            // Collapse
+            description.classList.remove("expanded");
+            description.classList.add("collapsed");
+            spanText.textContent = "Show More";
+            this.classList.remove("expanded");
+
+            // Scroll to top of card smoothly
+            this.closest(".about-card").scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Website visit button interactions
+      document.querySelectorAll(".card-button").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          // Create ripple effect
+          const ripple = document.createElement("div");
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+
+          ripple.style.width = ripple.style.height = size + "px";
+          ripple.style.left = e.clientX - rect.left - size / 2 + "px";
+          ripple.style.top = e.clientY - rect.top - size / 2 + "px";
+          ripple.style.position = "absolute";
+          ripple.style.borderRadius = "50%";
+          ripple.style.background = "rgba(255,255,255,0.3)";
+          ripple.style.animation = "ripple 0.6s ease-out";
+          ripple.style.pointerEvents = "none";
+
+          this.style.position = "relative";
+          this.style.overflow = "hidden";
+          this.appendChild(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+
+          console.log(
+            "Website visit clicked for:",
+            this.closest(".about-card").querySelector(".card-title").textContent
+          );
+        });
+      });
+
+      // Add ripple keyframes
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes ripple {
+                0% { transform: scale(0); opacity: 1; }
+                100% { transform: scale(1); opacity: 0; }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

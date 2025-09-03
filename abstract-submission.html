@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WCEME - 2025</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/prettyphoto/css/prettyPhoto.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/countdown/jquery.countdown.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-orange: #f67330;
+        --light-orange: #fff7f3;
+        --soft-orange: #ffe5d9;
+        --primary-gray: #8b94a3;
+        --light-gray: #f8fafc;
+        --soft-gray: #f1f5f9;
+        --dark-gray: #475569;
+        --text-primary: #334155;
+        --text-secondary: #64748b;
+        --white: #ffffff;
+        --border-light: #e2e8f0;
+        --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
+          0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.07),
+          0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.08),
+          0 4px 6px -2px rgba(0, 0, 0, 0.03);
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--light-orange) 0%,
+          var(--white) 100%
+        );
+        border: 1px solid var(--soft-orange);
+        border-radius: 20px;
+        padding: 40px 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -20%;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(
+          circle,
+          rgba(246, 115, 48, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: float 10s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.4;
+        }
+        50% {
+          transform: translateY(-10px) rotate(180deg);
+          opacity: 0.7;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .main-title {
+        font-family: "Playfair Display", serif;
+        font-size: 38px;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 32px;
+        letter-spacing: -0.5px;
+      }
+
+      .dates-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .deadline-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, var(--primary-orange), #ff8a65);
+        color: var(--white);
+        padding: 16px 32px;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 18px;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .deadline-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .deadline-badge:hover::before {
+        left: 100%;
+      }
+
+      .key-dates {
+        background: var(--white);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        padding: 24px 32px;
+        box-shadow: var(--shadow-subtle);
+        width: 100%;
+      }
+
+      .dates-title {
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: var(--text-primary);
+      }
+
+      .dates-title i {
+        color: var(--primary-orange);
+      }
+
+      .dates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+      }
+
+      .date-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        background: var(--light-gray);
+        border-radius: 10px;
+        font-size: 15px;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+      }
+
+      .date-item:hover {
+        background: var(--soft-orange);
+        transform: translateY(-1px);
+      }
+
+      .date-item i {
+        color: var(--primary-orange);
+      }
+
+      .date-item strong {
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      .guidelines-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .guideline-card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 28px;
+        box-shadow: var(--shadow-subtle);
+        transition: all 0.3s ease;
+        position: relative;
+        border: 1px solid var(--border-light);
+      }
+
+      .guideline-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-medium);
+        border-color: var(--soft-orange);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .card-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--light-orange);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-orange);
+        font-size: 21px;
+        flex-shrink: 0;
+      }
+
+      .card-title {
+        font-family: "Inter", sans-serif;
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--text-primary);
+        letter-spacing: -0.2px;
+        margin-top: 0;
+      }
+
+      .card-content {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-weight: 400;
+      }
+
+      .card-content ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .card-content li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .card-content li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 5px;
+        height: 5px;
+        background: var(--primary-orange);
+        border-radius: 50%;
+      }
+
+      .card-content strong {
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      .highlight-text {
+        background: var(--soft-orange);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: var(--primary-orange);
+      }
+
+      .submit-abstract-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(246, 115, 48, 0.3) !important;
+        background: #e5652d !important;
+        color: white !important;
+        text-decoration: none !important;
+      }
+
+      .submit-section {
+        background: linear-gradient(
+          135deg,
+          var(--light-orange) 0%,
+          var(--white) 100%
+        );
+        border-radius: 16px;
+        border: 1px solid var(--soft-orange);
+        margin-top: 40px;
+      }
+
+      /* Fixed content structure - button always at the end */
+      .content-wrapper {
+        position: relative;
+      }
+
+      .all-content {
+        margin-bottom: 16px;
+      }
+
+      /* Smooth expandable content */
+      .expandable-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(-10px);
+      }
+
+      .expandable-content.expanded {
+        max-height: 600px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Improved expand button - always at the bottom */
+      .expand-btn {
+        background: linear-gradient(
+          135deg,
+          var(--light-orange),
+          var(--soft-orange)
+        );
+        border: 1px solid var(--soft-orange);
+        color: var(--primary-orange);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        width: auto;
+        margin-top: 8px;
+      }
+
+      .expand-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(246, 115, 48, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .expand-btn:hover::before {
+        left: 100%;
+      }
+
+      .expand-btn:hover {
+        background: linear-gradient(135deg, var(--primary-orange), #ff8a65);
+        color: var(--white);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .expand-btn i {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 16px;
+      }
+
+      .expand-btn.expanded i {
+        transform: rotate(180deg);
+      }
+
+      .expand-btn:focus {
+        outline: 2px solid var(--primary-orange);
+        outline-offset: 2px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .submission-guidelines {
+          padding: 16px 8px;
+        }
+
+        .hero-section {
+          padding: 32px 24px;
+          margin-bottom: 24px;
+        }
+
+        .main-title {
+          font-size: 32px;
+        }
+
+        .guidelines-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .guideline-card {
+          padding: 24px;
+        }
+
+        .dates-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .deadline-badge {
+          font-size: 16px;
+          padding: 14px 29px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 29px;
+        }
+
+        .card-title {
+          font-size: 18px;
+        }
+
+        .guideline-card {
+          padding: 20px;
+        }
+
+        .hero-section {
+          padding: 24px 16px;
+        }
+
+        .key-dates {
+          padding: 20px 24px;
+        }
+      }
+
+      /* Additional refinements */
+      .card-content p {
+        margin-bottom: 12px;
+      }
+
+      .card-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Screen reader only content */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body id="home" class="wide body-light workshop-page">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Wrap all content -->
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header fixed">
+        <div class="container">
+          <div class="header-wrapper clearfix">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="#home" class="scroll-to" id="menu-toggle">
+                <span>
+                  <i class="ri-menu-2-line"></i>
+                </span>
+                MENU
+              </a>
+            </div>
+            <div class="logo-container-wceme">
+              <img src="./assets/img/logo/2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /HEADER -->
+
+      <!-- SLIDING MENU -->
+      <div id="sliding-menu" class="sliding-menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-logo">
+              <img src="./assets/img/logo/1.png" alt="WCEME 2025" />
+            </div>
+            <button class="menu-close" id="menu-close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <nav class="menu-nav">
+            <ul class="menu-list">
+              <li class="menu-item" data-delay="100">
+                <a href="./index.html" class="menu-link">
+                  <i class="ri-home-line"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="200">
+                <a href="./workshops.html" class="menu-link">
+                  <i class="ri-tools-line"></i>
+                  <span>Workshops</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="300">
+                <a href="./pathways.html" class="menu-link">
+                  <i class="ri-route-line"></i>
+                  <span>Pathways</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="400">
+                <a href="./fdp.html" class="menu-link">
+                  <i class="ri-graduation-cap-line"></i>
+                  <span>Faculty Development Programme</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="500">
+                <a href="./abstract-submission.html" class="menu-link">
+                  <i class="ri-file-text-line"></i>
+                  <span>Submit Abstract</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="600">
+                <a
+                  href="./paper-and-poster-presentations.html"
+                  class="menu-link"
+                >
+                  <i class="ri-presentation-line"></i>
+                  <span>Paper & Poster Presentations </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="700">
+                <a href="./about-us.html" class="menu-link">
+                  <i class="ri-information-line"></i>
+                  <span>About Us </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="800">
+                <a href="./assets/img/organizingcommitee.pdf" class="menu-link">
+                  <i class="ri-team-line"></i>
+                  <span>Organizing Committee</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-footer">
+            <p class="menu-footer-text">WCEME 2025</p>
+            <p class="menu-footer-subtext">September 25-28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- /SLIDING MENU -->
+
+      <!-- Content area -->
+      <div class="content-area">
+        <div id="main">
+          <!-- page header -->
+          <section id="page-header-sec" class="modern-page-header">
+            <div class="decorative-element circle1"></div>
+            <div class="decorative-element circle2"></div>
+            <div class="decorative-element triangle"></div>
+            <div class="container">
+              <div class="header-content">
+                <div class="header-badge">
+                  <span class="badge-text">WCEME 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /page header -->
+        </div>
+
+        <!-- PAGE SCHEDULE -->
+        <section class="page-fdp-sections">
+          <div class="container">
+            <div class="submission-guidelines">
+              <!-- Hero Section with Integrated Dates -->
+              <div class="hero-section" role="banner">
+                <div class="hero-content">
+                  <h1 class="main-title">Abstract Submission Guidelines</h1>
+
+                  <div class="dates-container">
+                    <div class="deadline-badge" role="alert" aria-live="polite">
+                      <i class="ri-calendar-event-line" aria-hidden="true"></i>
+                      Abstract Submission on or before 05th September 2025
+                    </div>
+
+                    <div class="key-dates" aria-labelledby="key-dates-title">
+                      <h2 class="dates-title" id="key-dates-title">
+                        <i class="ri-time-line" aria-hidden="true"></i>
+                        Key Dates
+                      </h2>
+                      <div class="dates-grid">
+                        <div class="date-item">
+                          <div>
+                            <i
+                              class="ri-calendar-check-line"
+                              aria-hidden="true"
+                            ></i>
+                            Submission Deadline:
+                          </div>
+                          <strong>15th September 2025</strong>
+                        </div>
+                        <div class="date-item">
+                          <i class="ri-mail-line" aria-hidden="true"></i>
+                          Notification: <strong>18th September 2025</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guidelines Grid -->
+              <div
+                class="guidelines-grid"
+                role="main"
+                aria-labelledby="guidelines-heading"
+              >
+                <h2 id="guidelines-heading" class="sr-only">
+                  Submission Guidelines Details
+                </h2>
+
+                <!-- General Instructions -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-information-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">1. General Instructions</h3>
+                  </header>
+                  <div class="card-content">
+                    <ul>
+                      <li>
+                        Abstracts must be submitted online through the
+                        designated email.
+                      </li>
+                      <li>
+                        Submissions must be made before the deadline:
+                        <span class="highlight-text">15th September 2025</span>.
+                      </li>
+                      <li>
+                        Only original, unpublished work will be considered.
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <!-- Abstract Format -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-file-text-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">2. Abstract Format</h3>
+                  </header>
+                  <div class="card-content">
+                    <div class="content-wrapper">
+                      <div class="all-content">
+                        <ul>
+                          <li>
+                            <strong>Title:</strong> Bold, centered, not
+                            exceeding 20 words.
+                          </li>
+                          <li>
+                            <strong>Authors:</strong> Full names with
+                            affiliations and contact information (mark the
+                            presenting author with an asterisk *).
+                          </li>
+                          <li>
+                            <strong>Font:</strong> Times New Roman, size 12,
+                            single-spaced.
+                          </li>
+                        </ul>
+
+                        <div class="expandable-content" id="format-content">
+                          <ul>
+                            <li>
+                              <strong>Length:</strong> Maximum
+                              <span class="highlight-text">250–300 words</span>
+                              (excluding title and author info).
+                            </li>
+                            <li>
+                              <strong>Margins:</strong> 1 inch on all sides.
+                            </li>
+                            <li>
+                              <strong>File format:</strong> .doc / .docx / PDF.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <button
+                        class="expand-btn"
+                        onclick="toggleExpand('format-content', this)"
+                        aria-expanded="false"
+                      >
+                        <span>Show more</span>
+                        <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Content Structure -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-list-ordered" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">3. Content Structure</h3>
+                  </header>
+                  <div class="card-content">
+                    <div class="content-wrapper">
+                      <div class="all-content">
+                        <p>
+                          A structured abstract is preferred and must include:
+                        </p>
+                        <ul>
+                          <li>
+                            <strong>Background:</strong> Brief context or
+                            rationale for the study.
+                          </li>
+                          <li>
+                            <strong>Objectives:</strong> Aim or hypothesis of
+                            the work.
+                          </li>
+                        </ul>
+
+                        <div class="expandable-content" id="structure-content">
+                          <ul>
+                            <li>
+                              <strong>Methods:</strong> Description of methods,
+                              design, or tools used.
+                            </li>
+                            <li><strong>Results:</strong> Key findings</li>
+                            <li><strong>Conclusion:</strong> Implications</li>
+                            <li>
+                              <strong>Keywords:</strong> 3–5 keywords (in
+                              italics, at the end).
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <button
+                        class="expand-btn"
+                        onclick="toggleExpand('structure-content', this)"
+                        aria-expanded="false"
+                      >
+                        <span>Show more</span>
+                        <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Categories/Themes -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-price-tag-3-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">4. Categories / Themes</h3>
+                  </header>
+                  <div class="card-content">
+                    <p>
+                      Indicate the category/theme under which your abstract
+                      should be reviewed (e.g.,
+                      <span class="highlight-text"
+                        >Pediatrics, Public Health, Simulation Education</span
+                      >, etc.).
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Review Process -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-search-eye-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">5. Review Process</h3>
+                  </header>
+                  <div class="card-content">
+                    <ul>
+                      <li>
+                        All abstracts will be peer-reviewed by the Scientific
+                        Committee.
+                      </li>
+                      <li>
+                        Accepted abstracts will be eligible for oral or poster
+                        presentation.
+                      </li>
+                      <li>
+                        Notification of acceptance will be sent by
+                        <span class="highlight-text">18th September 2025</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <!-- Submission Limit -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-numbers-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">6. Submission Limit</h3>
+                  </header>
+                  <div class="card-content">
+                    <p>
+                      Each author may submit up to
+                      <span class="highlight-text">2 abstracts</span> (1 for
+                      oral & 1 for poster) as presenting author.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Ethical Considerations -->
+                <article class="guideline-card" tabindex="0">
+                  <header class="card-header">
+                    <div class="card-icon">
+                      <i class="ri-shield-check-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="card-title">7. Ethical Considerations</h3>
+                  </header>
+                  <div class="card-content">
+                    <p>
+                      For studies involving human/animal subjects, ensure
+                      ethical clearance and mention it in the abstract if
+                      applicable.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Submit Abstract Button -->
+              <div
+                class="submit-section"
+                style="text-align: center; margin-top: 40px; padding: 30px"
+              >
+                <div class="submit-container">
+                  <h2
+                    style="
+                      color: var(--text-primary);
+                      margin-bottom: 20px;
+                      font-size: 24px;
+                    "
+                  >
+                    Ready to Submit Your Abstract?
+                  </h2>
+                  <p
+                    style="
+                      color: var(--text-secondary);
+                      margin-bottom: 30px;
+                      font-size: 16px;
+                      max-width: 600px;
+                      margin-left: auto;
+                      margin-right: auto;
+                    "
+                  >
+                    Please ensure your abstract follows all the guidelines above
+                    before submitting. You can submit up to 2 abstracts (1 for
+                    oral & 1 for poster presentation).
+                  </p>
+                  <a
+                    href="abstract-submission-form.html"
+                    class="submit-abstract-btn"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 10px;
+                      background: var(--primary-orange);
+                      color: white;
+                      padding: 15px 30px;
+                      border-radius: 12px;
+                      text-decoration: none;
+                      font-weight: 600;
+                      font-size: 16px;
+                      transition: all 0.3s ease;
+                      box-shadow: var(--shadow-soft);
+                    "
+                  >
+                    <i class="ri-send-plane-line" style="font-size: 18px"></i>
+                    Submit Abstract
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /PAGE SCHEDULE -->
+      </div>
+      <!-- /Content area -->
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-meta">
+          <div class="container text-center">
+            <div class="clearfix">
+              <ul class="social-line list-inline">
+                <li data-animation="flipInY" data-animation-delay="100">
+                  <a
+                    href="https://twitter.com/avmch3"
+                    target="_blank"
+                    class="social-icon twitter"
+                    ><i class="ri-twitter-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="200">
+                  <a
+                    href="https://www.linkedin.com/company/avmch"
+                    target="_blank"
+                    class="social-icon linkedin"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="300">
+                  <a
+                    href="https://www.facebook.com/aarupadaiveedumedicalcollege/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    ><i class="ri-facebook-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="400">
+                  <a
+                    href="https://www.youtube.com/channel/UCCIX3YXBdgtWURgGS48UR4g"
+                    target="_blank"
+                    class="social-icon youtube"
+                    ><i class="ri-youtube-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="500">
+                  <a
+                    href="https://instagram.com/avmch_puducherry?utm_medium=copy_link"
+                    target="_blank"
+                    class="social-icon instagram"
+                    ><i class="ri-instagram-fill"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <span
+              class="copyright"
+              data-animation="fadeInUp"
+              data-animation-delay="100"
+              >&copy; 2025 - Aarupadai Veedu Medical College and Hospital</span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- /FOOTER -->
+
+      <div class="to-top"><i class="fa fa-angle-up"></i></div>
+    </div>
+    <!-- /Wrap all content -->
+
+    <!-- Popup: Register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <button
+          type="button"
+          class="close close-btn"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <section class="popup-register">
+          <h1 class="section-title">
+            <span
+              data-animation="flipInY"
+              data-animation-delay="300"
+              class="icon-inner"
+              ><span class="fa-stack"
+                ><i class="fa rhex fa-stack-2x"></i
+                ><i class="fa fa-ticket fa-stack-1x"></i></span
+            ></span>
+            <span
+              data-animation="fadeInRight"
+              data-animation-delay="500"
+              class="title-inner"
+              >Register now <small> / dont mıss event!</small></span
+            >
+          </h1>
+          <form
+            id="registration-form"
+            name="registration-form"
+            class="registration-form"
+            action="#"
+            method="post"
+          >
+            <iframe
+              src="//eventbrite.com/tickets-external?eid=18432753863&ref=etckt"
+              frameborder="0"
+              height="300px"
+              width="100%"
+              vspace="0"
+              hspace="0"
+              marginheight="5"
+              marginwidth="5"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
+          </form>
+        </section>
+      </div>
+    </div>
+    <!-- /Popup: Register -->
+
+    <!-- JS Global -->
+
+    <!--[if lt IE 9
+      ]><script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script
+    ><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/superfish/js/superfish.js"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/plugins/placeholdem.min.js"></script>
+    <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="assets/plugins/owlcarousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/waypoints/waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!--<script src="assets/js/theme-ajax-mail.js"></script>-->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        theme.init();
+        theme.initMainSlider();
+        theme.initCountDown();
+        theme.initPartnerSlider();
+        theme.initTestimonials();
+        theme.initGoogleMap();
+      });
+      jQuery(window).load(function () {
+        theme.initAnimation();
+      });
+
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy({ offset: 100, target: ".navigation" });
+      });
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+      jQuery(window).resize(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+
+      jQuery(document).ready(function () {
+        theme.onResize();
+      });
+      jQuery(window).load(function () {
+        theme.onResize();
+      });
+      jQuery(window).resize(function () {
+        theme.onResize();
+      });
+
+      jQuery(window).load(function () {
+        if (location.hash != "") {
+          var hash = "#" + window.location.hash.substr(1);
+          if (hash.length) {
+            jQuery("html,body")
+              .delay(0)
+              .animate(
+                {
+                  scrollTop: jQuery(hash).offset().top - 44 + "px",
+                },
+                {
+                  duration: 1200,
+                  easing: "easeInOutExpo",
+                }
+              );
+          }
+        }
+      });
+    </script>
+    <script>
+      // Fixed expand/collapse functionality - button stays at bottom
+      function toggleExpand(contentId, button) {
+        const content = document.getElementById(contentId);
+        const icon = button.querySelector("i");
+        const text = button.querySelector("span");
+
+        if (content.classList.contains("expanded")) {
+          // Collapse
+          content.classList.remove("expanded");
+          button.classList.remove("expanded");
+          button.setAttribute("aria-expanded", "false");
+          text.textContent = "Show more";
+          icon.className = "ri-arrow-down-s-line";
+        } else {
+          // Expand
+          content.classList.add("expanded");
+          button.classList.add("expanded");
+          button.setAttribute("aria-expanded", "true");
+          text.textContent = "Show less";
+          icon.className = "ri-arrow-up-s-line";
+        }
+      }
+
+      // Add keyboard navigation support
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.target.classList.contains("expand-btn") &&
+          (e.key === "Enter" || e.key === " ")
+        ) {
+          e.preventDefault();
+          e.target.click();
+        }
+      });
+
+      // Add smooth scroll behavior
+      document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+  </body>
+</html>

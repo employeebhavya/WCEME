@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WCEME - 2025</title>
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/fontawesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/plugins/prettyphoto/css/prettyPhoto.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/countdown/jquery.countdown.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <style>
+      .timeline-header {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .timeline-header h2 {
+        font-size: 44px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 16px;
+      }
+
+      .timeline-header p {
+        font-size: 19px;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .timeline-track {
+        position: relative;
+        padding: 32px 0;
+      }
+
+      .timeline-track::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f67330 0%, #ff8a50 100%);
+        transform: translateY(-50%);
+        border-radius: 2px;
+      }
+
+      .timeline-items {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+      }
+
+      .timeline-item {
+        flex: 1;
+        max-width: 280px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .timeline-item.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-icon {
+        width: 80px;
+        height: 80px;
+        background: #f67330;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        color: white;
+        font-size: 32px;
+        box-shadow: 0 8px 25px rgba(246, 115, 48, 0.3);
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 32px 24px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-top: 32px;
+        border-top: 4px solid #f67330;
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline-content h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 16px;
+      }
+
+      .timeline-content ul {
+        list-style: none;
+        text-align: left;
+      }
+
+      .timeline-content li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 15px;
+        color: #555;
+      }
+
+      .timeline-content li i {
+        color: #f67330;
+        margin-right: 12px;
+        margin-top: 3px;
+      }
+
+      /* Split Screen for Poster Guidelines */
+      .poster-split {
+        display: flex;
+        gap: 30px;
+        min-height: 100vh;
+        margin: 80px 0;
+      }
+
+      .split-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .split-image {
+        flex: 1;
+        position: relative;
+        background: url("./assets/img/AVMC-1-1.webp") center/cover no-repeat;
+        background-attachment: fixed;
+      }
+
+      .split-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #f67330aa 0%, #ff8a50aa 100%);
+      }
+
+      .split-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+      }
+
+      .split-overlay h2 {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .split-overlay p {
+        font-size: 20px;
+        opacity: 0.95;
+      }
+
+      .poster-guidelines h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 32px;
+        position: relative;
+        margin-top: 0;
+      }
+
+      .poster-guidelines h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: #f67330;
+        border-radius: 2px;
+      }
+
+      .guideline-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 32px;
+        padding: 24px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid #f67330;
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.6s ease;
+      }
+      .guideline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .guideline-item.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .guideline-icon {
+        width: 50px;
+        height: 50px;
+        background: #f67330;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        margin-right: 24px;
+        flex-shrink: 0;
+      }
+
+      .guideline-text h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 8px;
+      }
+
+      .guideline-text p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Step-by-Step Infographic */
+
+      .steps-header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .steps-header h2 {
+        font-size: 44px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 16px;
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 48px;
+        margin-top: 48px;
+      }
+
+      .step-card {
+        position: relative;
+        background: white;
+        border-radius: 20px;
+        padding: 48px 32px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s ease;
+        border: 2px solid #f0f0f0;
+      }
+
+      .step-card.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(246, 115, 48, 0.15);
+        border-color: #f67330;
+      }
+
+      .step-number {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        background: #f67330;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .step-icon {
+        font-size: 48px;
+        color: #f67330;
+        margin: 32px 0 24px;
+      }
+
+      .step-card h3 {
+        font-size: 25px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 16px;
+      }
+
+      .step-details {
+        text-align: left;
+        margin-top: 24px;
+      }
+
+      .step-details ul {
+        list-style: none;
+      }
+
+      .step-details li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        color: #555;
+      }
+
+      .step-details li i {
+        color: #f67330;
+        margin-right: 12px;
+        margin-top: 3px;
+      }
+
+      /* Highlight Boxes */
+      .highlight-box {
+        background: linear-gradient(135deg, #f67330 0%, #ff8a50 100%);
+        color: white;
+        padding: 32px;
+        border-radius: 16px;
+        margin: 32px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .highlight-icon {
+        font-size: 40px;
+        margin-right: 24px;
+      }
+
+      .highlight-text h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .highlight-text p {
+        opacity: 0.9;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .section-header h1 {
+          font-size: 40px;
+        }
+
+        .section-header p {
+          font-size: 17px;
+        }
+
+        .poster-split {
+          flex-direction: column;
+        }
+
+        .split-image {
+          min-height: 400px;
+          background-attachment: scroll;
+        }
+
+        .timeline-items {
+          flex-direction: column;
+          gap: 48px;
+        }
+        .timeline-item {
+          max-width: 100%;
+        }
+        .timeline-track::before {
+          display: none;
+        }
+
+        .steps-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .timeline-header h2,
+        .steps-header h2 {
+          font-size: 35px;
+        }
+
+        .split-overlay h2 {
+          font-size: 35px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-header {
+          padding: 48px 16px;
+        }
+
+        .section-header h1 {
+          font-size: 32px;
+        }
+
+        .step-card {
+          padding: 40px 24px;
+        }
+
+        .timeline-content {
+          padding: 24px 16px;
+        }
+
+        .split-image {
+          background-attachment: scroll;
+        }
+      }
+    </style>
+  </head>
+  <body id="home" class="wide body-light workshop-page">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Wrap all content -->
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header fixed">
+        <div class="container">
+          <div class="header-wrapper clearfix">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="#home" class="scroll-to" id="menu-toggle">
+                <span>
+                  <i class="ri-menu-2-line"></i>
+                </span>
+                MENU
+              </a>
+            </div>
+            <div class="logo-container-wceme">
+              <img src="./assets/img/logo/2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /HEADER -->
+
+      <!-- SLIDING MENU -->
+      <div id="sliding-menu" class="sliding-menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-logo">
+              <img src="./assets/img/logo/1.png" alt="WCEME 2025" />
+            </div>
+            <button class="menu-close" id="menu-close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <nav class="menu-nav">
+            <ul class="menu-list">
+              <li class="menu-item" data-delay="100">
+                <a href="./index.html" class="menu-link">
+                  <i class="ri-home-line"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="200">
+                <a href="./workshops.html" class="menu-link">
+                  <i class="ri-tools-line"></i>
+                  <span>Workshops</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="300">
+                <a href="./pathways.html" class="menu-link">
+                  <i class="ri-route-line"></i>
+                  <span>Pathways</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="400">
+                <a href="./fdp.html" class="menu-link">
+                  <i class="ri-graduation-cap-line"></i>
+                  <span>Faculty Development Programme</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="500">
+                <a href="./abstract-submission.html" class="menu-link">
+                  <i class="ri-file-text-line"></i>
+                  <span>Submit Abstract</span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="600">
+                <a
+                  href="./paper-and-poster-presentations.html"
+                  class="menu-link"
+                >
+                  <i class="ri-presentation-line"></i>
+                  <span>Paper & Poster Presentations </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="700">
+                <a href="./about-us.html" class="menu-link">
+                  <i class="ri-information-line"></i>
+                  <span>About Us </span>
+                </a>
+              </li>
+              <li class="menu-item" data-delay="800">
+                <a href="./assets/img/organizingcommitee.pdf" class="menu-link">
+                  <i class="ri-team-line"></i>
+                  <span>Organizing Committee</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-footer">
+            <p class="menu-footer-text">WCEME 2025</p>
+            <p class="menu-footer-subtext">September 25-28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- /SLIDING MENU -->
+
+      <!-- Content area -->
+      <div class="content-area">
+        <div id="main">
+          <!-- page header -->
+          <section id="page-header-sec" class="modern-page-header">
+            <div class="decorative-element circle1"></div>
+            <div class="decorative-element circle2"></div>
+            <div class="decorative-element triangle"></div>
+            <div class="container">
+              <div class="header-content">
+                <div class="header-badge">
+                  <span class="badge-text">WCEME 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /page header -->
+        </div>
+
+        <!-- PAGE SCHEDULE -->
+        <section class="page-fdp-sections">
+          <div class="container">
+            <div class="conference-section">
+              <!-- Oral Presentation Timeline -->
+              <div class="oral-timeline">
+                <div class="timeline-container">
+                  <div class="timeline-header">
+                    <h2>PG Paper Presentation Guidelines</h2>
+                    <p>
+                      Follow these essential steps for a successful oral
+                      presentation
+                    </p>
+                  </div>
+
+                  <div class="timeline-track">
+                    <div class="timeline-items">
+                      <div class="timeline-item" data-delay="0">
+                        <div class="timeline-icon">
+                          <i class="ri-slideshow-line"></i>
+                        </div>
+                        <div class="timeline-content">
+                          <h3>Format Requirements</h3>
+                          <ul>
+                            <li>
+                              <i class="ri-check-line"></i>MS PowerPoint format
+                              required
+                            </li>
+                            <li>
+                              <i class="ri-check-line"></i>16:9 aspect ratio
+                              mandatory
+                            </li>
+                            <li>
+                              <i class="ri-close-line"></i>No personal
+                              laptops/devices allowed
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="timeline-item" data-delay="200">
+                        <div class="timeline-icon">
+                          <i class="ri-time-line"></i>
+                        </div>
+                        <div class="timeline-content">
+                          <h3>Time Management</h3>
+                          <ul>
+                            <li>
+                              <i class="ri-timer-line"></i>6 minutes
+                              presentation
+                            </li>
+                            <li>
+                              <i class="ri-question-line"></i>2 minutes Q&A
+                            </li>
+                            <li>
+                              <i class="ri-focus-line"></i>Practice for perfect
+                              timing
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="timeline-item" data-delay="400">
+                        <div class="timeline-icon">
+                          <i class="ri-presentation-line"></i>
+                        </div>
+                        <div class="timeline-content">
+                          <h3>Presentation Tips</h3>
+                          <ul>
+                            <li>
+                              <i class="ri-mic-line"></i>Speak clearly and
+                              moderately
+                            </li>
+                            <li>
+                              <i class="ri-focus-3-line"></i>Focus on key points
+                            </li>
+                            <li>
+                              <i class="ri-eye-line"></i>Use visual aids
+                              effectively
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="highlight-box">
+                    <i class="ri-lightbulb-line highlight-icon"></i>
+                    <div class="highlight-text">
+                      <h4>Pro Tip</h4>
+                      <p>
+                        Be to the point and avoid lengthy explanations. Stay
+                        focused on your key findings and avoid unnecessary
+                        details.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Poster Guidelines Split Screen -->
+              <div class="poster-split">
+                <div class="split-content poster-guidelines">
+                  <h2>PG Poster Presentations</h2>
+
+                  <div class="guideline-item" data-delay="0">
+                    <div class="guideline-icon">
+                      <i class="ri-ruler-line"></i>
+                    </div>
+                    <div class="guideline-text">
+                      <h3>Poster Size</h3>
+                      <p>
+                        Maximum dimensions:
+                        <strong>3ft width × 4ft height</strong>. Adhering to
+                        these dimensions optimizes the viewing experience for
+                        all attendees.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="guideline-item" data-delay="200">
+                    <div class="guideline-icon">
+                      <i class="ri-calendar-line"></i>
+                    </div>
+                    <div class="guideline-text">
+                      <h3>Setup Schedule</h3>
+                      <p>
+                        Set up your posters on the
+                        <strong>morning of September 26th, 2025</strong>. Early
+                        setup ensures readiness for meaningful discussions
+                        throughout the conference.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="guideline-item" data-delay="400">
+                    <div class="guideline-icon">
+                      <i class="ri-number-1"></i>
+                    </div>
+                    <div class="guideline-text">
+                      <h3>Board Assignment</h3>
+                      <p>
+                        Board and poster numbers will be emailed shortly.
+                        Display your poster on the designated board
+                        corresponding to your assigned number.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="split-image">
+                  <div class="split-overlay">
+                    <h2>Research Excellence</h2>
+                    <p>Showcase your findings with impact</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Poster Creation Steps -->
+              <div class="poster-steps">
+                <div class="steps-container">
+                  <div class="steps-header">
+                    <h2>Making an Effective Poster</h2>
+                    <p>
+                      Follow these three essential steps to create a compelling
+                      research poster
+                    </p>
+                  </div>
+
+                  <div class="steps-grid">
+                    <div class="step-card" data-delay="0">
+                      <div class="step-number">1</div>
+                      <div class="step-icon">
+                        <i class="ri-draft-line"></i>
+                      </div>
+                      <h3>Plan the Poster</h3>
+                      <p>
+                        A poster is not a "manuscript on the wall." Storyboard
+                        your concept effectively.
+                      </p>
+
+                      <div class="step-details">
+                        <ul>
+                          <li>
+                            <i class="ri-layout-line"></i>Create a rough draft
+                            layout
+                          </li>
+                          <li>
+                            <i class="ri-text"></i>Use bullet points, not heavy
+                            text
+                          </li>
+                          <li>
+                            <i class="ri-image-line"></i>Include images, graphs,
+                            tables
+                          </li>
+                          <li>
+                            <i class="ri-focus-line"></i>Present most important
+                            findings only
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div
+                        class="highlight-box"
+                        style="margin-top: 24px; padding: 24px"
+                      >
+                        <i
+                          class="ri-bookmark-line highlight-icon"
+                          style="font-size: 28px; margin-right: 16px"
+                        ></i>
+                        <div class="highlight-text">
+                          <h4 style="font-size: 17px">Sections</h4>
+                          <p style="font-size: 14px">
+                            Introduction, Objectives, Methods, Results,
+                            Conclusions, References (optional), Acknowledgements
+                            (optional)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-card" data-delay="200">
+                      <div class="step-number">2</div>
+                      <div class="step-icon">
+                        <i class="ri-slideshow-2-line"></i>
+                      </div>
+                      <h3>Use PowerPoint</h3>
+                      <p>
+                        Create your poster using ONE PowerPoint slide with
+                        strategic design elements.
+                      </p>
+
+                      <div class="step-details">
+                        <ul>
+                          <li>
+                            <i class="ri-font-size"></i>Sans-serif fonts (Arial,
+                            Calibri)
+                          </li>
+                          <li>
+                            <i class="ri-contrast-line"></i>High contrast
+                            backgrounds
+                          </li>
+                          <li>
+                            <i class="ri-grid-line"></i>Use View → Gridlines for
+                            alignment
+                          </li>
+                          <li>
+                            <i class="ri-image-add-line"></i>Add borders to
+                            images
+                          </li>
+                          <li>
+                            <i class="ri-award-line"></i>Include AEME &
+                            institutional logos
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="step-card" data-delay="400">
+                      <div class="step-number">3</div>
+                      <div class="step-icon">
+                        <i class="ri-printer-line"></i>
+                      </div>
+                      <h3>Review & Print</h3>
+                      <p>
+                        Thorough review ensures professional quality and
+                        error-free presentation.
+                      </p>
+
+                      <div class="step-details">
+                        <ul>
+                          <li>
+                            <i class="ri-search-line"></i>Check grammar and
+                            spelling
+                          </li>
+                          <li>
+                            <i class="ri-font-size-2"></i>Ensure readable font
+                            sizes
+                          </li>
+                          <li>
+                            <i class="ri-space"></i>Maintain 30% empty space
+                          </li>
+                          <li>
+                            <i class="ri-zoom-in-line"></i>Review at actual
+                            poster size
+                          </li>
+                          <li>
+                            <i class="ri-file-paper-line"></i>Consider paper
+                            quality for travel
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="highlight-box">
+                    <i class="ri-alarm-warning-line highlight-icon"></i>
+                    <div class="highlight-text">
+                      <h4>Final Check</h4>
+                      <p>
+                        Spacing and alignment often change when printed from
+                        different computers. Always check proofs carefully
+                        before final printing.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /PAGE SCHEDULE -->
+      </div>
+      <!-- /Content area -->
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-meta">
+          <div class="container text-center">
+            <div class="clearfix">
+              <ul class="social-line list-inline">
+                <li data-animation="flipInY" data-animation-delay="100">
+                  <a
+                    href="https://twitter.com/avmch3"
+                    target="_blank"
+                    class="social-icon twitter"
+                    ><i class="ri-twitter-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="200">
+                  <a
+                    href="https://www.linkedin.com/company/avmch"
+                    target="_blank"
+                    class="social-icon linkedin"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="300">
+                  <a
+                    href="https://www.facebook.com/aarupadaiveedumedicalcollege/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    ><i class="ri-facebook-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="400">
+                  <a
+                    href="https://www.youtube.com/channel/UCCIX3YXBdgtWURgGS48UR4g"
+                    target="_blank"
+                    class="social-icon youtube"
+                    ><i class="ri-youtube-fill"></i
+                  ></a>
+                </li>
+                <li data-animation="flipInY" data-animation-delay="500">
+                  <a
+                    href="https://instagram.com/avmch_puducherry?utm_medium=copy_link"
+                    target="_blank"
+                    class="social-icon instagram"
+                    ><i class="ri-instagram-fill"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <span
+              class="copyright"
+              data-animation="fadeInUp"
+              data-animation-delay="100"
+              >&copy; 2025 - Aarupadai Veedu Medical College and Hospital</span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- /FOOTER -->
+
+      <div class="to-top"><i class="fa fa-angle-up"></i></div>
+    </div>
+    <!-- /Wrap all content -->
+
+    <!-- Popup: Register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <button
+          type="button"
+          class="close close-btn"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <section class="popup-register">
+          <h1 class="section-title">
+            <span
+              data-animation="flipInY"
+              data-animation-delay="300"
+              class="icon-inner"
+              ><span class="fa-stack"
+                ><i class="fa rhex fa-stack-2x"></i
+                ><i class="fa fa-ticket fa-stack-1x"></i></span
+            ></span>
+            <span
+              data-animation="fadeInRight"
+              data-animation-delay="500"
+              class="title-inner"
+              >Register now <small> / dont mıss event!</small></span
+            >
+          </h1>
+          <form
+            id="registration-form"
+            name="registration-form"
+            class="registration-form"
+            action="#"
+            method="post"
+          >
+            <iframe
+              src="//eventbrite.com/tickets-external?eid=18432753863&ref=etckt"
+              frameborder="0"
+              height="300px"
+              width="100%"
+              vspace="0"
+              hspace="0"
+              marginheight="5"
+              marginwidth="5"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
+          </form>
+        </section>
+      </div>
+    </div>
+    <!-- /Popup: Register -->
+
+    <!-- JS Global -->
+
+    <!--[if lt IE 9
+      ]><script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script
+    ><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/superfish/js/superfish.js"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/plugins/placeholdem.min.js"></script>
+    <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="assets/plugins/owlcarousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/waypoints/waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
+    <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!--<script src="assets/js/theme-ajax-mail.js"></script>-->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        theme.init();
+        theme.initMainSlider();
+        theme.initCountDown();
+        theme.initPartnerSlider();
+        theme.initTestimonials();
+        theme.initGoogleMap();
+      });
+      jQuery(window).load(function () {
+        theme.initAnimation();
+      });
+
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy({ offset: 100, target: ".navigation" });
+      });
+      jQuery(window).load(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+      jQuery(window).resize(function () {
+        jQuery("body").scrollspy("refresh");
+      });
+
+      jQuery(document).ready(function () {
+        theme.onResize();
+      });
+      jQuery(window).load(function () {
+        theme.onResize();
+      });
+      jQuery(window).resize(function () {
+        theme.onResize();
+      });
+
+      jQuery(window).load(function () {
+        if (location.hash != "") {
+          var hash = "#" + window.location.hash.substr(1);
+          if (hash.length) {
+            jQuery("html,body")
+              .delay(0)
+              .animate(
+                {
+                  scrollTop: jQuery(hash).offset().top - 44 + "px",
+                },
+                {
+                  duration: 1200,
+                  easing: "easeInOutExpo",
+                }
+              );
+          }
+        }
+      });
+    </script>
+    <script>
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = parseInt(entry.target.dataset.delay) || 0;
+            setTimeout(() => {
+              entry.target.classList.add("animate");
+            }, delay);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll(
+          ".timeline-item, .guideline-item, .step-card"
+        );
+
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Simple hover effects for cards
+        const cards = document.querySelectorAll(
+          ".timeline-content, .step-card"
+        );
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            if (!card.classList.contains("step-card")) {
+              card.style.transform = "translateY(-5px)";
+            }
+          });
+
+          card.addEventListener("mouseleave", () => {
+            if (!card.classList.contains("step-card")) {
+              card.style.transform = "translateY(0)";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
